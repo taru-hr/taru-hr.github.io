@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450" role="img" aria-label="Beginner's guide to Reveal.js — code becomes slides">
+  <defs>
+    <linearGradient id="goldbar2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFD65C"/>
+      <stop offset="1" stop-color="#E5AF52"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="450" fill="#121212"/>
+
+  <!-- brand kicker -->
+  <rect x="42" y="40" width="12" height="12" rx="3" fill="#FFD65C"/>
+  <text x="62" y="51" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="3" fill="#FFD65C">TUTORIAL · REVEAL.JS</text>
+
+  <text x="42" y="104" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="34" font-weight="700" fill="#FCFCFC">Slides are just</text>
+  <text x="42" y="146" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="34" font-weight="700" fill="#FFD65C">a web page</text>
+
+  <!-- LEFT: code card -->
+  <g font-family="'SFMono-Regular','Consolas','Liberation Mono',monospace" font-size="16">
+    <rect x="42" y="196" width="250" height="208" rx="12" fill="#0f0f11" stroke="#383838"/>
+    <!-- window dots -->
+    <circle cx="62" cy="218" r="4.5" fill="#4a4a4d"/>
+    <circle cx="78" cy="218" r="4.5" fill="#4a4a4d"/>
+    <circle cx="94" cy="218" r="4.5" fill="#4a4a4d"/>
+    <line x1="42" y1="234" x2="292" y2="234" stroke="#232326"/>
+
+    <text x="60" y="266" fill="#FFD65C">&lt;section&gt;</text>
+    <text x="84" y="292" fill="#9AA0A6">&lt;h2&gt;</text><text x="124" y="292" fill="#DADADA">Day one</text><text x="214" y="292" fill="#9AA0A6">&lt;/h2&gt;</text>
+    <text x="84" y="318" fill="#9AA0A6">&lt;li</text><text x="112" y="318" fill="#8Fc98f">class=</text>
+    <text x="84" y="340" fill="#8Fc98f" font-size="15">  "fragment"</text><text x="196" y="340" fill="#9AA0A6" font-size="15">&gt;</text>
+    <text x="60" y="378" fill="#FFD65C">&lt;/section&gt;</text>
+  </g>
+
+  <!-- ARROW -->
+  <g transform="translate(300,300)">
+    <line x1="6" y1="0" x2="40" y2="0" stroke="url(#goldbar2)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M38 -9 L54 0 L38 9 Z" fill="#FFD65C"/>
+  </g>
+
+  <!-- RIGHT: rendered slide preview -->
+  <g>
+    <rect x="366" y="196" width="192" height="208" rx="12" fill="#1c1c1f" stroke="#383838"/>
+    <!-- slide title + accent bar -->
+    <text x="386" y="240" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="19" font-weight="600" fill="#F5F5F5">Day one</text>
+    <rect x="386" y="250" width="54" height="3" rx="1.5" fill="#FFD65C"/>
+    <!-- bullets -->
+    <circle cx="392" cy="280" r="3.5" fill="#FFD65C"/>
+    <rect x="404" y="276" width="130" height="9" rx="4.5" fill="#333336"/>
+    <circle cx="392" cy="306" r="3.5" fill="#FFD65C"/>
+    <rect x="404" y="302" width="112" height="9" rx="4.5" fill="#333336"/>
+    <circle cx="392" cy="332" r="3.5" fill="#E5AF52"/>
+    <rect x="404" y="328" width="92" height="9" rx="4.5" fill="#2a2a2d"/>
+    <!-- slide progress dots -->
+    <circle cx="452" cy="384" r="4" fill="#FFD65C"/>
+    <circle cx="468" cy="384" r="4" fill="#4a4a4d"/>
+    <circle cx="484" cy="384" r="4" fill="#4a4a4d"/>
+  </g>
+</svg>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turn your slides into a website — a beginner's guide to Reveal.js</title>
+  <meta name="description" content="No coding needed. A plain-English, HR-focused walkthrough of how to turn a PowerPoint into an interactive web presentation with Reveal.js — with a copy-paste starter you can reuse.">
+
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/article.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- A few extra styles just for this article: the live-deck embed and a keyboard-key look -->
+  <style>
+    .demo-embed {
+      position: relative; width: 100%; aspect-ratio: 16 / 9;
+      border: 1px solid var(--art-border); border-radius: 12px;
+      overflow: hidden; background: #0d0d0d; margin: 22px 0 6px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+    }
+    .demo-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .demo-cap { text-align: center; font-size: 13px; color: var(--art-muted); margin: 0 0 22px; }
+
+    .keys { list-style: none; padding: 0; margin: 14px 0; }
+    .keys li {
+      display: flex; align-items: center; gap: 14px; padding: 9px 0;
+      border-bottom: 1px solid var(--art-border); font-size: 15px;
+    }
+    .keys li:last-child { border-bottom: 0; }
+    .kbd {
+      flex: 0 0 auto; min-width: 34px; text-align: center;
+      border: 1px solid var(--art-border); border-bottom-width: 2px;
+      border-radius: 6px; padding: 3px 9px; color: var(--art-strong);
+      background: var(--art-code); font-family: var(--ff-mono); font-size: 13px;
+    }
+    .field-list { list-style: none; padding: 0; margin: 8px 0; }
+    .field-list li { padding: 7px 0; border-bottom: 1px dashed var(--art-border); }
+    .field-list li:last-child { border-bottom: 0; }
+    .field-list code { white-space: nowrap; }
+  </style>
+</head>
+
+<body>
+
+  <article class="article">
+
+    <a class="back-link" href="../index.html">
+      <ion-icon name="chevron-back-outline"></ion-icon> Back to the site
+    </a>
+
+    <!-- ===== HEADER ===== -->
+    <header class="article-head">
+      <div class="article-meta">
+        <span class="tag">Tutorial</span>
+        <span>Jul 01, 2026</span>
+        <span class="dot"></span>
+        <span>About 12 min read</span>
+      </div>
+
+      <h1>Turn your slides into a website — a beginner's guide to Reveal.js</h1>
+
+      <p class="lede">
+        You already know how to make slides. This is the same skill, saved as a
+        web page you can share with a link, present in a browser, and update in
+        seconds. No coding background needed — if you can edit a sentence, you can
+        edit a slide.
+      </p>
+
+      <p class="byline">By Taru Parttimaa · HR Specialist</p>
+    </header>
+
+    <!-- ===== BODY ===== -->
+    <div class="article-body">
+
+      <p>
+        I took one of our own HR decks — an <em>Expat Employee Guide</em> for people
+        relocating to Finland — and rebuilt it as an interactive web presentation.
+        Same content, but now it opens in any browser, works on a phone, and lives
+        on this site at a shareable link. The tool that does it is called
+        <strong>Reveal.js</strong>, and it's free.
+      </p>
+
+      <p>
+        Here is the finished result, running live. Click it and press the
+        <strong>→</strong> arrow (or swipe on a phone):
+      </p>
+
+      <div class="demo-embed">
+        <iframe src="expat-guide-finland-slides.html" title="Expat Employee Guide — live Reveal.js demo" loading="lazy"></iframe>
+      </div>
+      <p class="demo-cap">
+        The live deck ·
+        <a href="expat-guide-finland-slides.html" target="_blank" rel="noopener">open it full-screen ↗</a>
+      </p>
+
+      <p>
+        By the end of this guide you'll understand every piece of how that was made,
+        and you'll have a <strong>copy-paste starter</strong> you can reuse for your
+        next onboarding deck, policy briefing or training session. You never have to
+        memorise anything — I'll translate each bit into plain English.
+      </p>
+
+      <!-- 1 -->
+      <h2><span class="step">1.</span> What Reveal.js actually is</h2>
+
+      <p>
+        Think of it like this. PowerPoint is a program you open. <strong>Reveal.js is
+        a small helper that turns a plain text file into a slideshow inside a web
+        browser.</strong> You write your slides as text; Reveal.js handles the
+        arrows, the transitions, the full-screen mode, the speaker notes and the
+        progress bar.
+      </p>
+
+      <div class="mini-figure">
+        <span class="emoji">📊</span>
+        <div>
+          <p><span class="label">PowerPoint</span> keeps your slides inside a
+          <code>.pptx</code> file that needs PowerPoint (or similar) to open.</p>
+        </div>
+      </div>
+
+      <div class="mini-figure">
+        <span class="emoji">🌐</span>
+        <div>
+          <p><span class="label">Reveal.js</span> keeps your slides inside an
+          <code>.html</code> file that opens in any browser — no software to install,
+          nothing for your audience to download.</p>
+        </div>
+      </div>
+
+      <p>
+        Why bother, as someone in HR moving into analytics? A few honest reasons:
+      </p>
+
+      <ul>
+        <li><strong>Share with a link.</strong> Send a URL instead of a 30&nbsp;MB
+          attachment. It's always the latest version.</li>
+        <li><strong>Lives with your work.</strong> A web deck sits right next to your
+          dashboards and reports — same site, same look.</li>
+        <li><strong>It's just text.</strong> That means you can copy, find-and-replace,
+          and reuse slides effortlessly — the analyst's mindset.</li>
+        <li><strong>It's free and open.</strong> No licence, and it works offline once
+          loaded.</li>
+      </ul>
+
+      <div class="callout plain">
+        <p class="callout-title"><ion-icon name="bulb-outline"></ion-icon> In plain English</p>
+        <p>
+          A Reveal.js presentation is one web page. Each slide is a chunk of that page.
+          You edit the words; Reveal.js makes it behave like a slideshow.
+        </p>
+      </div>
+
+      <!-- 2 -->
+      <h2><span class="step">2.</span> One file, three simple parts</h2>
+
+      <p>
+        Open the demo file (<code>posts/expat-guide-finland-slides.html</code>) and,
+        past the comments at the top, it's just three parts. You only ever touch the
+        middle one.
+      </p>
+
+<pre><code><span class="c">&lt;!-- PART 1: the setup — load Reveal.js and the fonts (leave this alone) --&gt;</span>
+<span class="k">&lt;link</span> rel=<span class="s">"stylesheet"</span> href=<span class="s">"https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css"</span><span class="k">&gt;</span>
+
+<span class="c">&lt;!-- PART 2: your slides — this is the part you edit --&gt;</span>
+<span class="k">&lt;div</span> class=<span class="s">"reveal"</span><span class="k">&gt;</span>
+  <span class="k">&lt;div</span> class=<span class="s">"slides"</span><span class="k">&gt;</span>
+    <span class="k">&lt;section&gt;</span>Slide one<span class="k">&lt;/section&gt;</span>
+    <span class="k">&lt;section&gt;</span>Slide two<span class="k">&lt;/section&gt;</span>
+  <span class="k">&lt;/div&gt;</span>
+<span class="k">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- PART 3: the engine — start the show (leave this alone) --&gt;</span>
+<span class="k">&lt;script</span> src=<span class="s">"https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"</span><span class="k">&gt;&lt;/script&gt;</span>
+<span class="k">&lt;script&gt;</span> Reveal.initialize(); <span class="k">&lt;/script&gt;</span></code></pre>
+
+      <p>
+        That's the whole idea. <code>cdn.jsdelivr.net</code> is just a place on the
+        internet that hands your browser a copy of Reveal.js — that's what "CDN"
+        means, a delivery service for code. Because you're borrowing it from there,
+        <strong>there is nothing to install</strong>.
+      </p>
+
+      <div class="mini-figure">
+        <span class="emoji">🥪</span>
+        <div>
+          <p><span class="label">A helpful picture.</span> Your slides are the filling;
+          Part&nbsp;1 and Part&nbsp;3 are the bread. You write the filling and leave
+          the bread as-is.</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <h2><span class="step">3.</span> Writing a slide</h2>
+
+      <p>
+        Every slide is one <code>&lt;section&gt;</code>. The word "section" is just
+        HTML's name for "a block." Whatever you put between
+        <code>&lt;section&gt;</code> and <code>&lt;/section&gt;</code> becomes one
+        slide. Here's a real one from the deck:
+      </p>
+
+<pre><code><span class="k">&lt;section&gt;</span>
+  <span class="k">&lt;h2&gt;</span>Your employment contract<span class="k">&lt;/h2&gt;</span>
+  <span class="k">&lt;p&gt;</span>Before you sign, make sure you understand:<span class="k">&lt;/p&gt;</span>
+  <span class="k">&lt;ul&gt;</span>
+    <span class="k">&lt;li&gt;</span>Job title &amp; main duties<span class="k">&lt;/li&gt;</span>
+    <span class="k">&lt;li&gt;</span>Salary, pay date &amp; benefits<span class="k">&lt;/li&gt;</span>
+    <span class="k">&lt;li&gt;</span>Probation and notice periods<span class="k">&lt;/li&gt;</span>
+  <span class="k">&lt;/ul&gt;</span>
+<span class="k">&lt;/section&gt;</span></code></pre>
+
+      <p>
+        Four tags do almost everything you'll ever need. Tags come in pairs — one to
+        open, one with a <code>/</code> to close:
+      </p>
+
+      <ul class="field-list">
+        <li><code>&lt;h2&gt;…&lt;/h2&gt;</code> — a <strong>heading</strong> (the slide title).</li>
+        <li><code>&lt;p&gt;…&lt;/p&gt;</code> — a <strong>paragraph</strong> of text.</li>
+        <li><code>&lt;ul&gt;…&lt;/ul&gt;</code> — an <strong>unordered list</strong> (bullets).</li>
+        <li><code>&lt;li&gt;…&lt;/li&gt;</code> — one <strong>list item</strong> (a single bullet).</li>
+      </ul>
+
+      <p>
+        Want a numbered list instead of bullets? Swap <code>&lt;ul&gt;</code> for
+        <code>&lt;ol&gt;</code> (o for "ordered"). That's the level of difficulty
+        we're talking about.
+      </p>
+
+      <div class="callout try">
+        <p class="callout-title"><ion-icon name="flask-outline"></ion-icon> Try this</p>
+        <p>
+          Copy that <code>&lt;section&gt;</code> block, paste it directly below itself,
+          and change the words. You just added a slide. Reorder slides by moving whole
+          <code>&lt;section&gt;</code> blocks up or down — cut and paste, exactly like
+          dragging slides in the sidebar.
+        </p>
+      </div>
+
+      <!-- 4 -->
+      <h2><span class="step">4.</span> Revealing one point at a time</h2>
+
+      <p>
+        In PowerPoint you use "animations" to make bullets appear on click. In
+        Reveal.js you add the word <code>fragment</code> to anything you want to
+        appear one step later:
+      </p>
+
+<pre><code><span class="k">&lt;ul&gt;</span>
+  <span class="k">&lt;li&gt;</span>Prepare your documents<span class="k">&lt;/li&gt;</span>
+  <span class="k">&lt;li</span> class=<span class="s">"fragment"</span><span class="k">&gt;</span>Visit a Finnish bank<span class="k">&lt;/li&gt;</span>
+  <span class="k">&lt;li</span> class=<span class="s">"fragment"</span><span class="k">&gt;</span>Send your IBAN to payroll<span class="k">&lt;/li&gt;</span>
+<span class="k">&lt;/ul&gt;</span></code></pre>
+
+      <p>
+        The first bullet shows immediately; each <code>class="fragment"</code> bullet
+        waits for another press of the arrow. <code>class="…"</code> is simply how you
+        pin a label onto something so Reveal.js knows to treat it specially. Great for
+        walking a new hire through a checklist without overwhelming them.
+      </p>
+
+      <!-- 5 -->
+      <h2><span class="step">5.</span> Stacking related slides (the down arrow)</h2>
+
+      <p>
+        Reveal.js has a neat trick PowerPoint doesn't: slides can stack
+        <em>vertically</em>. The audience moves <strong>right</strong> through your
+        main story, and <strong>down</strong> into optional detail. In the demo, the
+        "Tax card" slide has a detailed comparison table stacked underneath it.
+      </p>
+
+      <p>
+        You do it by putting sections <em>inside</em> a section:
+      </p>
+
+<pre><code><span class="k">&lt;section&gt;</span>
+  <span class="k">&lt;section&gt;</span>Tax card — the basics<span class="k">&lt;/section&gt;</span>   <span class="c">&lt;!-- press ↓ for more --&gt;</span>
+  <span class="k">&lt;section&gt;</span>The different tax-card types<span class="k">&lt;/section&gt;</span>
+<span class="k">&lt;/section&gt;</span></code></pre>
+
+      <p>
+        The outer <code>&lt;section&gt;</code> is now a "stack," and each inner one is a
+        slide you reach with the down arrow. Perfect for "here's the summary — press
+        down if you want the deep dive," so your main flow stays short.
+      </p>
+
+      <!-- 6 -->
+      <h2><span class="step">6.</span> Pictures and full-screen backgrounds</h2>
+
+      <p>
+        To drop an image onto a slide, use one <code>&lt;img&gt;</code> tag pointing at
+        a file in your <code>assets/images</code> folder:
+      </p>
+
+<pre><code><span class="k">&lt;img</span> src=<span class="s">"../assets/images/taru-hr-logo.png"</span> alt=<span class="s">"Taru HR logo"</span><span class="k">&gt;</span></code></pre>
+
+      <p>
+        To fill the <em>whole</em> slide with a photo — like the Helsinki harbour on
+        the title slide — you don't use <code>&lt;img&gt;</code> at all. You add an
+        instruction to the <code>&lt;section&gt;</code> itself:
+      </p>
+
+<pre><code><span class="k">&lt;section</span> data-background-image=<span class="s">"../assets/images/helsinki-harbour.jpg"</span>
+         data-background-opacity=<span class="s">"0.42"</span><span class="k">&gt;</span>
+  <span class="k">&lt;h1&gt;</span>Expat Employee Guide<span class="k">&lt;/h1&gt;</span>
+<span class="k">&lt;/section&gt;</span></code></pre>
+
+      <p>
+        <code>data-background-image</code> is the "wallpaper for this slide," and
+        <code>data-background-opacity="0.42"</code> dims it to 42% so your text stays
+        readable on top. The <code>alt="…"</code> on a normal image, by the way, is the
+        description a screen-reader announces — always worth filling in.
+      </p>
+
+      <!-- 7 -->
+      <h2><span class="step">7.</span> Speaker notes only you can see</h2>
+
+      <p>
+        This is the feature that sells people on Reveal.js. You can attach private
+        notes to any slide and see them — with a timer and a preview of the next
+        slide — on your own screen, while the audience sees only the slide.
+      </p>
+
+<pre><code><span class="k">&lt;section&gt;</span>
+  <span class="k">&lt;h2&gt;</span>Salary &amp; payslip<span class="k">&lt;/h2&gt;</span>
+  <span class="k">&lt;aside</span> class=<span class="s">"notes"</span><span class="k">&gt;</span>
+    Remember to explain gross vs net — it's the thing new
+    arrivals ask about most.
+  <span class="k">&lt;/aside&gt;</span>
+<span class="k">&lt;/section&gt;</span></code></pre>
+
+      <p>
+        Anything inside <code>&lt;aside class="notes"&gt;</code> never appears on the
+        slide. To read your notes while presenting, press the <span class="kbd">S</span>
+        key — a second "speaker view" window opens. (Try it on the demo above.)
+      </p>
+
+      <!-- 8 -->
+      <h2><span class="step">8.</span> Tables, without any special tool</h2>
+
+      <p>
+        The tax-card comparison in the demo is a plain HTML table. Structured
+        comparisons — leave types, benefit tiers, before/after — almost always read
+        better as a table than as bullets. The pattern is: a row
+        (<code>&lt;tr&gt;</code>) holds cells (<code>&lt;td&gt;</code>), and header
+        cells use <code>&lt;th&gt;</code>:
+      </p>
+
+<pre><code><span class="k">&lt;table&gt;</span>
+  <span class="k">&lt;tr&gt;&lt;th&gt;</span>Type<span class="k">&lt;/th&gt;&lt;th&gt;</span>Who it's for<span class="k">&lt;/th&gt;&lt;/tr&gt;</span>
+  <span class="k">&lt;tr&gt;&lt;td&gt;</span>Standard<span class="k">&lt;/td&gt;&lt;td&gt;</span>Staying over 6 months<span class="k">&lt;/td&gt;&lt;/tr&gt;</span>
+  <span class="k">&lt;tr&gt;&lt;td&gt;</span>Source tax<span class="k">&lt;/td&gt;&lt;td&gt;</span>Staying up to 6 months<span class="k">&lt;/td&gt;&lt;/tr&gt;</span>
+<span class="k">&lt;/table&gt;</span></code></pre>
+
+      <p>
+        The demo's theme already styles tables to match the gold-and-dark look, so you
+        just write the rows and it looks the part.
+      </p>
+
+      <!-- 9 -->
+      <h2><span class="step">9.</span> Making it match your brand</h2>
+
+      <p>
+        The colours, fonts and spacing all live in one <code>&lt;style&gt;</code> block
+        near the top of the file, under a section labelled <em>THE THEME</em>. At the
+        very top of it is a short list of colours with friendly names:
+      </p>
+
+<pre><code>:root {
+  --bg:   <span class="s">hsl(0, 0%, 7%)</span>;      <span class="c">/* page background (near-black) */</span>
+  --text: <span class="s">hsl(0, 0%, 90%)</span>;     <span class="c">/* normal text (light grey) */</span>
+  --gold: <span class="s">hsl(45, 100%, 68%)</span>;  <span class="c">/* the accent colour */</span>
+}</code></pre>
+
+      <p>
+        Change <code>--gold</code> to a different colour and <em>every</em> gold accent
+        in the whole deck updates at once — titles, bullets, the progress bar. That's
+        the same "one place to change it" idea behind a good spreadsheet. You don't
+        need to understand the rest of the style block to recolour a deck.
+      </p>
+
+      <div class="callout plain">
+        <p class="callout-title"><ion-icon name="color-palette-outline"></ion-icon> Colours in plain English</p>
+        <p>
+          <code>hsl(45, 100%, 68%)</code> reads as <em>hue 45 (a golden-yellow),
+          100% colourful, 68% bright</em>. Nudge the first number to shift the colour,
+          the last to make it lighter or darker. Or just paste a hex code like
+          <code>#e0b23a</code> — both work.
+        </p>
+      </div>
+
+      <!-- 10 -->
+      <h2><span class="step">10.</span> Presenting it</h2>
+
+      <p>
+        Open the page in a browser and use these keys. (They work on the live demo
+        above — click it first, then try them.)
+      </p>
+
+      <ul class="keys">
+        <li><span class="kbd">→</span> <span>Next slide &nbsp;·&nbsp; <span class="kbd">Space</span> does the same</span></li>
+        <li><span class="kbd">←</span> <span>Previous slide</span></li>
+        <li><span class="kbd">↓</span> <span>Go down into a stacked detail slide (then <span class="kbd">↑</span> to come back)</span></li>
+        <li><span class="kbd">F</span> <span>Full screen</span></li>
+        <li><span class="kbd">S</span> <span>Speaker view — your notes, a timer and the next slide</span></li>
+        <li><span class="kbd">O</span> <span>Overview — every slide as a grid, click to jump (<span class="kbd">Esc</span> also works)</span></li>
+        <li><span class="kbd">B</span> <span>Blank the screen to black (for a pause / discussion)</span></li>
+        <li><span class="kbd">?</span> <span>Show the full list of shortcuts</span></li>
+      </ul>
+
+      <p>
+        On a phone or tablet, swipe left/right and up/down. It's the same deck — it
+        just reflows to fit the screen.
+      </p>
+
+      <!-- 11 -->
+      <h2><span class="step">11.</span> Publishing it (you already have)</h2>
+
+      <p>
+        Because a Reveal.js deck is an ordinary web page, putting it on this site is
+        the same as adding any other page:
+      </p>
+
+      <ol>
+        <li>Save your <code>.html</code> file in the <code>posts/</code> folder.</li>
+        <li>Add a card for it in <code>data/posts.json</code> so it shows up on the Blog
+          — copy an existing entry and point its <code>"link"</code> at your file
+          (there's a walkthrough in <code>templates/post.template.html</code>).</li>
+        <li>Commit and push. GitHub Pages publishes it at a public link you can share.</li>
+      </ol>
+
+      <p>
+        That's exactly how the <em>Expat Employee Guide</em> above got onto the Blog
+        page — it's a normal post whose link happens to point at a slideshow.
+      </p>
+
+      <div class="callout plain">
+        <p class="callout-title"><ion-icon name="eye-outline"></ion-icon> Previewing before you publish</p>
+        <p>
+          A single Reveal.js file opens fine by double-clicking it. If you want to
+          preview it <em>inside</em> the full site (with the blog card), run the little
+          local server from the project folder — <code>python3 -m http.server 8000</code>
+          — then open <code>http://localhost:8000</code>. On the live GitHub Pages site
+          it just works.
+        </p>
+      </div>
+
+      <!-- 12 -->
+      <h2><span class="step">12.</span> A starter you can copy</h2>
+
+      <p>
+        Here is a complete, working presentation — small enough to read in one go.
+        Save it as <code>posts/my-first-deck.html</code>, open it, and start replacing
+        words. It already shows the pieces from this guide: a title background, bullets,
+        a fragment, a vertical stack and a speaker note.
+      </p>
+
+<pre><code><span class="k">&lt;!DOCTYPE html&gt;</span>
+<span class="k">&lt;html</span> lang=<span class="s">"en"</span><span class="k">&gt;</span>
+<span class="k">&lt;head&gt;</span>
+  <span class="k">&lt;meta</span> charset=<span class="s">"UTF-8"</span><span class="k">&gt;</span>
+  <span class="k">&lt;title&gt;</span>My first deck<span class="k">&lt;/title&gt;</span>
+  <span class="k">&lt;link</span> rel=<span class="s">"stylesheet"</span> href=<span class="s">"https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.css"</span><span class="k">&gt;</span>
+  <span class="k">&lt;link</span> rel=<span class="s">"stylesheet"</span> href=<span class="s">"https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/theme/black.css"</span><span class="k">&gt;</span>
+<span class="k">&lt;/head&gt;</span>
+<span class="k">&lt;body&gt;</span>
+  <span class="k">&lt;div</span> class=<span class="s">"reveal"</span><span class="k">&gt;</span>
+    <span class="k">&lt;div</span> class=<span class="s">"slides"</span><span class="k">&gt;</span>
+
+      <span class="c">&lt;!-- Title slide --&gt;</span>
+      <span class="k">&lt;section&gt;</span>
+        <span class="k">&lt;h1&gt;</span>Onboarding<span class="k">&lt;/h1&gt;</span>
+        <span class="k">&lt;p&gt;</span>Your first week, one slide at a time.<span class="k">&lt;/p&gt;</span>
+      <span class="k">&lt;/section&gt;</span>
+
+      <span class="c">&lt;!-- A slide with bullets, one revealed on click --&gt;</span>
+      <span class="k">&lt;section&gt;</span>
+        <span class="k">&lt;h2&gt;</span>Day one checklist<span class="k">&lt;/h2&gt;</span>
+        <span class="k">&lt;ul&gt;</span>
+          <span class="k">&lt;li&gt;</span>Collect your ID badge<span class="k">&lt;/li&gt;</span>
+          <span class="k">&lt;li&gt;</span>Meet your team<span class="k">&lt;/li&gt;</span>
+          <span class="k">&lt;li</span> class=<span class="s">"fragment"</span><span class="k">&gt;</span>Set up payroll with HR<span class="k">&lt;/li&gt;</span>
+        <span class="k">&lt;/ul&gt;</span>
+        <span class="k">&lt;aside</span> class=<span class="s">"notes"</span><span class="k">&gt;</span>Press S to see me — I'm a speaker note.<span class="k">&lt;/aside&gt;</span>
+      <span class="k">&lt;/section&gt;</span>
+
+      <span class="c">&lt;!-- A stack: press the down arrow for detail --&gt;</span>
+      <span class="k">&lt;section&gt;</span>
+        <span class="k">&lt;section&gt;&lt;h2&gt;</span>Benefits<span class="k">&lt;/h2&gt;&lt;p&gt;</span>Press ↓ for the detail.<span class="k">&lt;/p&gt;&lt;/section&gt;</span>
+        <span class="k">&lt;section&gt;&lt;h2&gt;</span>Annual leave<span class="k">&lt;/h2&gt;&lt;p&gt;</span>Accrued monthly.<span class="k">&lt;/p&gt;&lt;/section&gt;</span>
+      <span class="k">&lt;/section&gt;</span>
+
+    <span class="k">&lt;/div&gt;</span>
+  <span class="k">&lt;/div&gt;</span>
+
+  <span class="k">&lt;script</span> src=<span class="s">"https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/dist/reveal.js"</span><span class="k">&gt;&lt;/script&gt;</span>
+  <span class="k">&lt;script</span> src=<span class="s">"https://cdn.jsdelivr.net/npm/reveal.js@5.2.1/plugin/notes/notes.js"</span><span class="k">&gt;&lt;/script&gt;</span>
+  <span class="k">&lt;script&gt;</span>
+    Reveal.initialize({ hash: <span class="s">true</span>, plugins: [ RevealNotes ] });
+  <span class="k">&lt;/script&gt;</span>
+<span class="k">&lt;/body&gt;</span>
+<span class="k">&lt;/html&gt;</span></code></pre>
+
+      <p>
+        This version loads Reveal's ready-made <strong>"black" theme</strong> (the
+        second <code>&lt;link&gt;</code>), so it looks smart with zero styling effort.
+        When you want the gold-and-dark house style instead, copy the
+        <code>&lt;style&gt;</code> block from the Expat deck and remove that theme line.
+        There are other built-in themes too — <code>white</code>, <code>league</code>,
+        <code>moon</code>, <code>sky</code> — just change the word in the URL.
+      </p>
+
+      <div class="callout try">
+        <p class="callout-title"><ion-icon name="flask-outline"></ion-icon> Your five-minute first win</p>
+        <p>
+          Save the block above as <code>posts/my-first-deck.html</code>, double-click to
+          open it, and press <span class="kbd">→</span>. Then change "Onboarding" to your
+          own title and refresh. That's the entire loop: <strong>edit words → save →
+          refresh</strong>. Everything else is just more of the same.
+        </p>
+      </div>
+
+      <!-- close -->
+      <hr class="section-rule">
+
+      <h2>So… is that really all?</h2>
+
+      <p>
+        Really. Slides are <code>&lt;section&gt;</code> blocks; headings, paragraphs and
+        bullets are a handful of tags; <code>fragment</code> reveals things on click;
+        stacked sections give you optional detail; and a note tucked in
+        <code>&lt;aside class="notes"&gt;</code> is yours alone. The look is one list of
+        colours you can change. That's a complete, professional presentation.
+      </p>
+
+      <p>
+        You don't need to remember the code — keep the demo file and this page as your
+        cheat sheet. The valuable thing is the mental model: <strong>a deck is a web
+        page, each slide is a block of it, and Reveal.js makes it move.</strong> Once
+        that clicks, you can turn any of your HR material — onboarding, policy updates,
+        analytics readouts — into something you share with a link.
+      </p>
+
+      <div class="cta-row">
+        <a class="cta primary" href="expat-guide-finland-slides.html">
+          <ion-icon name="easel-outline"></ion-icon> Open the live demo deck
+        </a>
+        <a class="cta secondary" href="how-the-hr-dashboard-works.html">
+          <ion-icon name="bar-chart-outline"></ion-icon> Read: how the HR dashboard works
+        </a>
+      </div>
+
+      <footer class="article-footer">
+        The two files behind this guide are
+        <code>posts/expat-guide-finland-slides.html</code> (the presentation) and the
+        official docs at <a href="https://revealjs.com" target="_blank" rel="noopener">revealjs.com</a>,
+        which list every feature — themes, transitions, auto-animate and more — when
+        you're ready to explore further.
+      </footer>
+
+    </div>
+
+  </article>
+
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

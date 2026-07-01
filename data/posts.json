@@ -1,5 +1,23 @@
 [
   {
+    "title": "Expat Employee Guide — an interactive slide deck",
+    "category": "Presentation",
+    "date": "Jul 01, 2026",
+    "dateISO": "2026-07-01",
+    "image": "./assets/images/expat-deck-thumb.svg",
+    "excerpt": "A PowerPoint onboarding guide for employees relocating to Finland, rebuilt as a slideshow that runs right in your browser. Use the arrow keys or swipe — press F for full screen.",
+    "link": "./posts/expat-guide-finland-slides.html"
+  },
+  {
+    "title": "Turn your slides into a website — a beginner's guide to Reveal.js",
+    "category": "Tutorial",
+    "date": "Jul 01, 2026",
+    "dateISO": "2026-07-01",
+    "image": "./assets/images/revealjs-tutorial-thumb.svg",
+    "excerpt": "No coding needed. A plain-English walkthrough of how the deck above was made — and a copy-paste starter so you can turn any HR material into a shareable web presentation.",
+    "link": "./posts/build-hr-slides-with-reveal-js.html"
+  },
+  {
     "title": "How the HR dashboard works — explained for absolute beginners",
     "category": "Tutorial",
     "date": "Jul 01, 2026",
