@@ -1,0 +1,108 @@
+<!--
+  Component: Portfolio page
+  The project grid is rendered from /data/prototypes.json by assets/js/render.js.
+  To add a project: add one entry to that JSON file — no HTML editing needed.
+  The <template> below defines the markup used for each rendered card and is
+  also documented in /templates/prototype.template.html.
+-->
+<article class="portfolio" data-page="portfolio">
+
+  <header>
+    <h2 class="h2 article-title">Portfolio</h2>
+  </header>
+
+  <section class="projects">
+
+    <ul class="filter-list">
+
+      <li class="filter-item">
+        <button class="active" data-filter-btn>All</button>
+      </li>
+
+      <li class="filter-item">
+        <button data-filter-btn>Dashboards</button>
+      </li>
+
+      <li class="filter-item">
+        <button data-filter-btn>Analytics</button>
+      </li>
+
+      <li class="filter-item">
+        <button data-filter-btn>Processes</button>
+      </li>
+
+      <li class="filter-item">
+        <button data-filter-btn>Templates</button>
+      </li>
+
+    </ul>
+
+    <div class="filter-select-box">
+
+      <button class="filter-select" data-select>
+
+        <div class="select-value" data-select-value>Select category</div>
+
+        <div class="select-icon">
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+
+      </button>
+
+      <ul class="select-list">
+
+        <li class="select-item">
+          <button data-select-item>All</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Dashboards</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Analytics</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Processes</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Templates</button>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- Cards are injected here from data/prototypes.json -->
+    <ul class="project-list" data-project-list></ul>
+
+    <!--
+      Card template used by render.js. Placeholders in {{curly braces}} are
+      replaced per project. Keep the class/attribute structure intact so the
+      filtering and hover styles keep working.
+    -->
+    <template data-project-template>
+      <li class="project-item  active" data-filter-item data-category="{{category}}">
+        <a href="{{link}}" data-project-link>
+
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="{{icon}}"></ion-icon>
+            </div>
+
+            <img src="{{image}}" alt="{{title}}" loading="lazy">
+          </figure>
+
+          <h3 class="project-title">{{title}}</h3>
+
+          <p class="project-category">{{categoryLabel}}</p>
+
+        </a>
+      </li>
+    </template>
+
+  </section>
+
+</article>

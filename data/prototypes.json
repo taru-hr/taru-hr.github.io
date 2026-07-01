@@ -1,0 +1,10 @@
+[
+  {
+    "title": "HR Analytics Dashboard",
+    "category": "dashboards",
+    "categoryLabel": "Dashboards",
+    "image": "./assets/images/hr-dashboard-thumb.svg",
+    "icon": "bar-chart-outline",
+    "link": "./prototypes/hr-dashboard.html"
+  }
+]

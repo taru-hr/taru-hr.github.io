@@ -1,0 +1,44 @@
+<!--
+============================================================================
+ TEMPLATE · A whole new page / nav section
+============================================================================
+ Use this when you want to add an entirely new tab to the site
+ (for example: "Certifications", "Case Studies", "Services").
+
+ STEP 1 — Create a component file, e.g.  components/certifications.html ,
+          and paste the <article> block below into it. Rename:
+            • class="certifications"      -> your page's CSS class
+            • data-page="certifications"  -> the nav key (must be lower-case)
+
+ STEP 2 — Register the component in  index.html  by adding a mount point
+          inside <div class="main-content"> :
+
+            <div data-include="components/certifications.html"></div>
+
+ STEP 3 — Add a matching button to  components/navbar.html . The button
+          TEXT (lower-cased) must equal the data-page value:
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Certifications</button>
+            </li>
+
+ That's it — the navigation wiring in assets/js/script.js picks it up
+ automatically. Do NOT add the "active" class unless this should be the
+ default page shown on load (only one page should be active at a time).
+============================================================================
+-->
+<article class="certifications" data-page="certifications">
+
+  <header>
+    <h2 class="h2 article-title">Certifications</h2>
+  </header>
+
+  <section class="about-text">
+    <p>
+      Introductory paragraph for the new page. Add any structure you like
+      below — reuse existing patterns (service cards, timelines, project or
+      post grids) so the styling stays consistent.
+    </p>
+  </section>
+
+</article>

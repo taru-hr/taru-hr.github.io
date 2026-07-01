@@ -1,0 +1,61 @@
+<!--
+============================================================================
+ TEMPLATE · Portfolio prototype / project
+============================================================================
+ Portfolio cards are data-driven. To add a project you do NOT edit any HTML —
+ you add ONE object to  data/prototypes.json .
+
+ STEP 1 — copy this object into the array in  data/prototypes.json
+          (mind the commas between array entries):
+
+    {
+      "title":         "Your prototype name",
+      "category":      "dashboards",
+      "categoryLabel": "Dashboards",
+      "image":         "./assets/images/project-1.jpg",
+      "icon":          "bar-chart-outline",
+      "link":          "./prototypes/your-prototype.html"
+    }
+
+ FIELD REFERENCE
+    title          Project name shown on the card.
+    category       Lower-case filter key. MUST match one of the filter buttons
+                   in components/portfolio.html. Current keys:
+                   dashboards · analytics · processes · templates
+                   (To add a brand-new filter, add a matching <button> to both
+                    the .filter-list and .select-list in that component.)
+    categoryLabel  Pretty label printed under the title (free text).
+    image          Thumbnail path (add images under assets/images/).
+    icon           Ionicon name shown on hover (https://ionic.io/ionicons).
+    link           Where the card points. Use "#" for a placeholder, or point
+                   it at a real page such as an interactive prototype (see the
+                   HR Analytics Dashboard: ./prototypes/hr-dashboard.html).
+
+ STEP 2 — save. render.js generates the card using the
+          <template data-project-template> in components/portfolio.html.
+
+ TIP — building a NEW interactive prototype?
+    Copy prototypes/hr-dashboard.html as a starting point, give it its own
+    CSS/JS under assets/, then point this "link" field at it.
+
+ ---------------------------------------------------------------------------
+ Reference only: this is the markup render.js produces for each project.
+ ---------------------------------------------------------------------------
+-->
+<li class="project-item  active" data-filter-item data-category="dashboards">
+  <a href="./prototypes/your-prototype.html">
+
+    <figure class="project-img">
+      <div class="project-item-icon-box">
+        <ion-icon name="bar-chart-outline"></ion-icon>
+      </div>
+
+      <img src="./assets/images/project-1.jpg" alt="Your prototype name" loading="lazy">
+    </figure>
+
+    <h3 class="project-title">Your prototype name</h3>
+
+    <p class="project-category">Dashboards</p>
+
+  </a>
+</li>

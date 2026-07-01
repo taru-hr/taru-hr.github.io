@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HR Analytics Dashboard — Taru Parttimaa</title>
+  <meta name="description" content="Interactive HR analytics dashboard prototype: headcount, turnover, time-to-hire, engagement, recruitment funnel and department detail.">
+
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="dash">
+
+    <!-- header + controls -->
+    <header class="dash-header">
+      <div>
+        <a class="back-link" href="../index.html">
+          <ion-icon name="chevron-back-outline"></ion-icon> Back to portfolio
+        </a>
+        <h1><span class="accent">HR</span> Analytics Dashboard</h1>
+        <p class="dash-sub">Interactive people-analytics prototype · illustrative sample data</p>
+      </div>
+
+      <div class="dash-controls">
+        <label>Year
+          <select data-year aria-label="Select year"></select>
+        </label>
+        <label>Department
+          <select data-dept aria-label="Select department"></select>
+        </label>
+      </div>
+    </header>
+
+    <!-- KPI cards (rendered by dashboard.js) -->
+    <section class="kpi-grid" data-kpis aria-label="Key metrics"></section>
+
+    <!-- charts -->
+    <section class="chart-grid">
+
+      <div class="card">
+        <h3>Headcount by department</h3>
+        <p class="card-note">Click a bar to focus the dashboard on that team.</p>
+        <div data-chart="headcount"></div>
+      </div>
+
+      <div class="card">
+        <h3>Employee exits by month</h3>
+        <p class="card-note">Hover a point to see the monthly total.</p>
+        <div data-chart="turnover"></div>
+      </div>
+
+      <div class="card">
+        <h3>Workforce composition</h3>
+        <p class="card-note">Employment type · organisation-wide.</p>
+        <div data-chart="workforce"></div>
+      </div>
+
+      <div class="card">
+        <h3>Recruitment funnel</h3>
+        <p class="card-note">Applicants to hires · organisation-wide.</p>
+        <div data-chart="funnel"></div>
+      </div>
+
+    </section>
+
+    <!-- table -->
+    <section class="card table-card">
+      <div class="table-head">
+        <h3>Department detail</h3>
+        <span class="scope-pill" data-scope>All departments · 2025</span>
+      </div>
+      <div class="table-wrap">
+        <table data-table>
+          <thead>
+            <tr>
+              <th>Department</th>
+              <th class="num">Headcount</th>
+              <th class="num">Hires</th>
+              <th class="num">Exits</th>
+              <th class="num">Turnover</th>
+              <th class="num">Open roles</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="dash-footer">
+      Prototype built with vanilla JavaScript and inline SVG — no external chart
+      libraries. All figures are illustrative sample data.
+    </footer>
+
+  </div>
+
+  <!-- shared tooltip -->
+  <div class="chart-tooltip" data-tooltip></div>
+
+  <script src="../assets/js/dashboard.js"></script>
+
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
