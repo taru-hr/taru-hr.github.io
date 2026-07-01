@@ -1,0 +1,53 @@
+<!--
+  Component: Blog page
+  Posts are rendered from /data/posts.json by assets/js/render.js.
+  To publish a post: add one entry to that JSON file — no HTML editing needed.
+  The <template> below defines the markup for each post card and is also
+  documented in /templates/post.template.html.
+-->
+<article class="blog" data-page="blog">
+
+  <header>
+    <h2 class="h2 article-title">Blog</h2>
+  </header>
+
+  <section class="blog-posts">
+
+    <!-- Posts are injected here from data/posts.json -->
+    <ul class="blog-posts-list" data-blog-list></ul>
+
+    <!--
+      Post template used by render.js. Placeholders in {{curly braces}} are
+      replaced per post. Keep the structure intact so hover styles keep working.
+    -->
+    <template data-blog-template>
+      <li class="blog-post-item">
+        <a href="{{link}}">
+
+          <figure class="blog-banner-box">
+            <img src="{{image}}" alt="{{title}}" loading="lazy">
+          </figure>
+
+          <div class="blog-content">
+
+            <div class="blog-meta">
+              <p class="blog-category">{{category}}</p>
+
+              <span class="dot"></span>
+
+              <time datetime="{{dateISO}}">{{date}}</time>
+            </div>
+
+            <h3 class="h3 blog-item-title">{{title}}</h3>
+
+            <p class="blog-text">{{excerpt}}</p>
+
+          </div>
+
+        </a>
+      </li>
+    </template>
+
+  </section>
+
+</article>

@@ -1,0 +1,11 @@
+[
+  {
+    "title": "How the HR dashboard works — explained for absolute beginners",
+    "category": "Tutorial",
+    "date": "Jul 01, 2026",
+    "dateISO": "2026-07-01",
+    "image": "./assets/images/hr-dashboard-thumb.svg",
+    "excerpt": "No coding experience needed — a plain-English tour of how the interactive HR dashboard is built, from the list of numbers to the clickable charts.",
+    "link": "./posts/how-the-hr-dashboard-works.html"
+  }
+]

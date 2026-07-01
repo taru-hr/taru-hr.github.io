@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How the HR dashboard works — a no-experience-needed guide</title>
+  <meta name="description" content="A plain-English walkthrough of how the interactive HR analytics dashboard is built: data, charts and clicks explained for complete beginners.">
+
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/article.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <article class="article">
+
+    <a class="back-link" href="../index.html">
+      <ion-icon name="chevron-back-outline"></ion-icon> Back to the site
+    </a>
+
+    <!-- ===== HEADER ===== -->
+    <header class="article-head">
+      <div class="article-meta">
+        <span class="tag">Tutorial</span>
+        <span>Jul 01, 2026</span>
+        <span class="dot"></span>
+        <span>About 9 min read</span>
+      </div>
+
+      <h1>How the HR dashboard works — explained for absolute beginners</h1>
+
+      <p class="lede">
+        No coding experience? Perfect. This is the friendly, jargon-free tour of
+        how the interactive HR dashboard is put together. By the end you'll
+        understand every moving part — and see that none of them are magic.
+      </p>
+
+      <p class="byline">By Taru Parttimaa · HR Specialist</p>
+    </header>
+
+    <!-- ===== BODY ===== -->
+    <div class="article-body">
+
+      <p>
+        If you've looked at the <a href="../prototypes/hr-dashboard.html">HR analytics
+        dashboard</a> — the one with the headcount bars, the turnover line and the
+        filters you can click — you might assume it took a team of engineers and
+        some expensive software. It didn't. It's built from three simple ingredients
+        that <em>every</em> website in the world uses, plus a small, tidy list of
+        numbers.
+      </p>
+
+      <p>
+        Let's meet the ingredients first, then build the dashboard up one layer at
+        a time. I'll show tiny snippets of the real code, but you never have to
+        write or memorise any of it — I'll translate each one into plain English.
+      </p>
+
+      <!-- 1 -->
+      <h2><span class="step">1.</span> A web page is just three layers</h2>
+
+      <p>Think of any web page like a person:</p>
+
+      <div class="mini-figure">
+        <span class="emoji">🦴</span>
+        <div>
+          <p><span class="label">HTML is the skeleton.</span> It decides what
+          things exist and where — "here is a box, here is a heading, here is a
+          table." Structure, nothing more.</p>
+        </div>
+      </div>
+
+      <div class="mini-figure">
+        <span class="emoji">🎨</span>
+        <div>
+          <p><span class="label">CSS is the skin and clothes.</span> It decides
+          how those things <em>look</em> — the dark background, the gold colour,
+          rounded corners, spacing.</p>
+        </div>
+      </div>
+
+      <div class="mini-figure">
+        <span class="emoji">⚡</span>
+        <div>
+          <p><span class="label">JavaScript is the muscles.</span> It makes things
+          <em>move and react</em> — when you pick a different year, JavaScript is
+          what notices and updates the numbers.</p>
+        </div>
+      </div>
+
+      <p>
+        That's the whole toolkit. HTML, CSS, JavaScript. The dashboard is just
+        these three, arranged thoughtfully around a list of HR numbers.
+      </p>
+
+      <!-- 2 -->
+      <h2><span class="step">2.</span> It all starts with the data</h2>
+
+      <p>
+        Before any charts, there's a plain list of numbers — think of it as a small
+        spreadsheet, but written as text. Here's a shortened piece of it:
+      </p>
+
+<pre><code><span class="c">// how many people, hires and leavers each team had in 2025</span>
+<span class="k">'Engineering'</span>: { headcount: <span class="s">132</span>, hires: <span class="s">36</span>, exits: <span class="s">19</span> },
+<span class="k">'Sales'</span>:       { headcount: <span class="s">88</span>,  hires: <span class="s">41</span>, exits: <span class="s">30</span> },
+<span class="k">'Marketing'</span>:   { headcount: <span class="s">46</span>,  hires: <span class="s">12</span>, exits: <span class="s">8</span>  },</code></pre>
+
+      <p>
+        Read it like a table. Each line is one department. <code>headcount</code> is
+        how many people work there, <code>hires</code> is how many joined, and
+        <code>exits</code> is how many left. The curly brackets <code>{ }</code> are
+        just a way of saying "these numbers belong together, to this team."
+      </p>
+
+      <div class="callout plain">
+        <p class="callout-title"><ion-icon name="bulb-outline"></ion-icon> In plain English</p>
+        <p>
+          Everything on the dashboard is calculated from this little list. Change a
+          number here and every card, chart and table that uses it updates. The data
+          is the single source of truth.
+        </p>
+      </div>
+
+      <!-- 3 -->
+      <h2><span class="step">3.</span> The boxes on screen (HTML)</h2>
+
+      <p>
+        Each of those four cards at the top — Headcount, Turnover, Time to hire,
+        Engagement — is just a labelled box. In HTML a box is written with
+        <code>&lt;div&gt;</code>, which literally means "a division," or "a section."
+        Simplified, one card looks like this:
+      </p>
+
+<pre><code><span class="k">&lt;div</span> class=<span class="s">"kpi-card"</span><span class="k">&gt;</span>
+  <span class="k">&lt;p&gt;</span>Total headcount<span class="k">&lt;/p&gt;</span>
+  <span class="k">&lt;p&gt;</span>430<span class="k">&lt;/p&gt;</span>
+<span class="k">&lt;/div&gt;</span></code></pre>
+
+      <p>
+        Tags come in pairs: <code>&lt;p&gt;</code> opens a paragraph and
+        <code>&lt;/p&gt;</code> closes it (the slash means "close"). So this says:
+        "a card, containing the label <em>Total headcount</em> and the number
+        <em>430</em>." That's all an HTML tag ever does — it wraps a piece of content
+        and gives it a name.
+      </p>
+
+      <!-- 4 -->
+      <h2><span class="step">4.</span> Making it look good (CSS)</h2>
+
+      <p>
+        On its own, that card would be black text on a white page. CSS adds the
+        style. It works by picking a thing and giving it looks. For example:
+      </p>
+
+<pre><code><span class="c">/* style every box named "kpi-card" */</span>
+.kpi-card {
+  background: <span class="s">#1f1f22</span>;   <span class="c">/* dark grey */</span>
+  border-radius: <span class="s">16px</span>;   <span class="c">/* rounded corners */</span>
+  padding: <span class="s">18px</span>;         <span class="c">/* breathing room inside */</span>
+}</code></pre>
+
+      <p>
+        Read it as a sentence: "for the kpi-card, make the background dark grey,
+        round the corners, and add space inside." <code>16px</code> means 16 pixels —
+        pixels are just the tiny dots your screen is made of, so it's a way of saying
+        "this big." Every colour, gap and font on the dashboard is one of these small
+        instructions.
+      </p>
+
+      <!-- 5 -->
+      <h2><span class="step">5.</span> Drawing charts with no special software</h2>
+
+      <p>
+        Here's the part people assume needs a fancy library. It doesn't. The charts
+        are drawn with something called <strong>SVG</strong>, which is just a way of
+        describing shapes with words. A rectangle, for instance, is written like this:
+      </p>
+
+<pre><code><span class="k">&lt;rect</span> x=<span class="s">"80"</span> y=<span class="s">"10"</span> width=<span class="s">"238"</span> height=<span class="s">"20"</span> <span class="k">/&gt;</span></code></pre>
+
+      <p>
+        That means: "draw a rectangle 80 across, 10 down, 238 long and 20 tall." A bar
+        chart is nothing more than a few of these rectangles stacked in rows. The clever
+        bit is deciding how <em>long</em> each bar should be, and it's simple maths:
+      </p>
+
+<pre><code>bar length = ( this team's headcount ÷ the biggest headcount ) × chart width</code></pre>
+
+      <p>
+        So the biggest team fills the whole width, and a team half its size gets a bar
+        half as long. The code does this once for each department and — there's your
+        chart. The line chart works the same way (dots joined up), and the donut is a
+        circle sliced into coloured wedges.
+      </p>
+
+      <div class="mini-figure">
+        <span class="emoji">🔗</span>
+        <div>
+          <p><span class="label">Connect the dots.</span> If you've ever done a
+          connect-the-dots drawing, you already understand SVG charts. The computer
+          works out where each dot goes from the numbers, then draws the lines and
+          shapes between them.</p>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <h2><span class="step">6.</span> Making it react to you (JavaScript)</h2>
+
+      <p>
+        Now the fun part — why the dashboard <em>responds</em> when you use it. This is
+        JavaScript's job. The idea is called an <strong>event</strong>: the page quietly
+        listens, and when something happens (you pick a year, you click a bar), it reacts.
+      </p>
+
+<pre><code><span class="c">// when the year dropdown changes, redraw everything</span>
+yearSelect.addEventListener(<span class="s">'change'</span>, redraw);</code></pre>
+
+      <p>
+        Translated: <code>addEventListener</code> means "listen for," <code>'change'</code>
+        is the moment you choose a different year, and <code>redraw</code> is the
+        instruction "do the whole drawing again." So the page hears your choice, goes
+        back to the data from step&nbsp;2, recalculates the numbers, and paints fresh
+        bars. It feels instant because the list of numbers is tiny.
+      </p>
+
+      <p>
+        Clicking a bar to focus on one team works exactly the same way — a different
+        event ("click"), the same "recalculate and redraw" response.
+      </p>
+
+      <!-- 7 -->
+      <h2><span class="step">7.</span> Where the KPI numbers come from</h2>
+
+      <p>
+        The big numbers at the top aren't stored anywhere — they're worked out on the
+        spot from the data. Each one is a small, familiar HR formula:
+      </p>
+
+      <ul>
+        <li><strong>Total headcount</strong> — add up every team's <code>headcount</code>.</li>
+        <li><strong>Turnover rate</strong> — <code>exits ÷ headcount × 100</code>, i.e. leavers as a percentage of the team.</li>
+        <li><strong>Average time to hire</strong> — the average across teams, weighted by team size.</li>
+        <li><strong>Engagement score</strong> — the same kind of size-weighted average of each team's score.</li>
+      </ul>
+
+      <p>
+        These are the exact sums you'd do in a spreadsheet. The only difference is the
+        page does them for you the instant you change a filter.
+      </p>
+
+      <!-- 8 -->
+      <h2><span class="step">8.</span> Try it yourself</h2>
+
+      <div class="callout try">
+        <p class="callout-title"><ion-icon name="flask-outline"></ion-icon> A tiny experiment</p>
+        <p>
+          Open <code>assets/js/dashboard.js</code> and find the line for
+          <code>'Engineering'</code> near the top. Change the headcount from
+          <code>132</code> to, say, <code>200</code> and save. Refresh the dashboard:
+          the Engineering bar grows, the total headcount jumps, and the turnover rate
+          shifts — all from that one edit.
+        </p>
+        <p>
+          That's the whole point of keeping the data in one place. You're editing HR
+          figures, not really "programming" at all.
+        </p>
+      </div>
+
+      <p>
+        To see your change, you'll want to preview the site. Because the site loads its
+        pieces in the background, it needs to be opened through a small local web server
+        rather than by double-clicking the file. If that sounds intimidating, it's one
+        line in a terminal from the project folder:
+      </p>
+
+<pre><code>python3 -m http.server 8000</code></pre>
+
+      <p>
+        …then visit <code>http://localhost:8000</code> in your browser. (On the live
+        GitHub Pages site it just works, with no setup.)
+      </p>
+
+      <!-- close -->
+      <hr class="section-rule">
+
+      <h2>So… is that really all?</h2>
+
+      <p>
+        Really. A short list of numbers, boxes made with HTML, looks added with CSS,
+        shapes drawn with SVG, and JavaScript listening for your clicks. No paid tools,
+        no database, no chart library — just those pieces working together. Every
+        impressive dashboard you've seen is the same handful of ideas, scaled up.
+      </p>
+
+      <p>
+        You don't need to remember any of the code here. The valuable thing is the
+        mental model: <strong>data in one place, three layers to show it, and events to
+        make it react.</strong> Once you can picture that, no dashboard looks like magic
+        again.
+      </p>
+
+      <div class="cta-row">
+        <a class="cta primary" href="../prototypes/hr-dashboard.html">
+          <ion-icon name="bar-chart-outline"></ion-icon> Open the live dashboard
+        </a>
+        <a class="cta secondary" href="../index.html">
+          <ion-icon name="albums-outline"></ion-icon> Back to the portfolio
+        </a>
+      </div>
+
+      <footer class="article-footer">
+        Want to go further? The files to peek at are
+        <code>prototypes/hr-dashboard.html</code> (the page),
+        <code>assets/css/dashboard.css</code> (the looks) and
+        <code>assets/js/dashboard.js</code> (the data and charts). They're
+        commented in plain language, so they make good next reading.
+      </footer>
+
+    </div>
+
+  </article>
+
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!--
+  Component: Sidebar
+  Shows the profile card (avatar, name, title) and contact / social details.
+  Edit the values below to update the person shown across the whole site.
+-->
+<aside class="sidebar" data-sidebar>
+
+  <div class="sidebar-info">
+
+    <figure class="avatar-box">
+      <img src="./assets/images/Taru.png" alt="Taru Parttimaa" width="80">
+    </figure>
+
+    <div class="info-content">
+      <h1 class="name" title="Taru Parttimaa">Taru Parttimaa</h1>
+
+      <p class="title">HR Specialist</p>
+    </div>
+
+    <button class="info_more-btn" data-sidebar-btn>
+      <span>Show Contacts</span>
+
+      <ion-icon name="chevron-down"></ion-icon>
+    </button>
+
+  </div>
+
+  <div class="sidebar-info_more">
+
+    <div class="separator"></div>
+
+    <ul class="contacts-list">
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="calendar-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Birthday</p>
+
+          <time datetime="1994-08-04">August 04, 1994</time>
+        </div>
+
+      </li>
+
+      <li class="contact-item">
+
+        <div class="icon-box">
+          <ion-icon name="location-outline"></ion-icon>
+        </div>
+
+        <div class="contact-info">
+          <p class="contact-title">Location</p>
+
+          <address>Finland</address>
+        </div>
+
+      </li>
+
+    </ul>
+
+    <div class="separator"></div>
+
+    <ul class="social-list">
+
+      <li class="social-item">
+        <a href="#" class="social-link">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+      </li>
+
+      <li class="social-item">
+        <a href="#" class="social-link">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+      </li>
+
+      <li class="social-item">
+        <a href="#" class="social-link">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</aside>

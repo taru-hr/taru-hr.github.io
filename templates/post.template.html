@@ -1,0 +1,68 @@
+<!--
+============================================================================
+ TEMPLATE · Blog post
+============================================================================
+ Blog posts are data-driven. To publish a new post you do NOT edit any HTML —
+ you add ONE object to  data/posts.json .
+
+ STEP 1 — copy this object into the array in  data/posts.json
+          (mind the commas between array entries):
+
+    {
+      "title":    "Your post title",
+      "category": "People Analytics",
+      "date":     "Jul 01, 2026",
+      "dateISO":  "2026-07-01",
+      "image":    "./assets/images/blog-1.jpg",
+      "excerpt":  "One or two sentences that preview the article.",
+      "link":     "#"
+    }
+
+ FIELD REFERENCE
+    title     Headline shown on the card.
+    category  Small label above the title (e.g. Onboarding, Retention, HR Tech).
+    date      Human-readable date shown on the card.
+    dateISO   Machine-readable date (YYYY-MM-DD) for the <time> element.
+    image     Banner image path. Add new images under assets/images/.
+    excerpt   Preview text.
+    link      Where the card points. Three options:
+                • "#"                                  a card with no destination
+                • "https://…"                          an external link
+                • "./posts/my-article.html"            a full article page —
+                  copy templates/article-page.template.html into posts/ to make
+                  one (see posts/how-the-hr-dashboard-works.html for an example).
+
+ STEP 2 — save. The card below is generated automatically by
+          assets/js/render.js using the <template data-blog-template> that
+          lives in components/blog.html.
+
+ ---------------------------------------------------------------------------
+ Reference only: this is the markup render.js produces for each post.
+ You normally never write this by hand.
+ ---------------------------------------------------------------------------
+-->
+<li class="blog-post-item">
+  <a href="#">
+
+    <figure class="blog-banner-box">
+      <img src="./assets/images/blog-1.jpg" alt="Your post title" loading="lazy">
+    </figure>
+
+    <div class="blog-content">
+
+      <div class="blog-meta">
+        <p class="blog-category">People Analytics</p>
+
+        <span class="dot"></span>
+
+        <time datetime="2026-07-01">Jul 01, 2026</time>
+      </div>
+
+      <h3 class="h3 blog-item-title">Your post title</h3>
+
+      <p class="blog-text">One or two sentences that preview the article.</p>
+
+    </div>
+
+  </a>
+</li>

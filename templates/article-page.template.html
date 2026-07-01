@@ -1,0 +1,96 @@
+<!--
+============================================================================
+ TEMPLATE · Full blog-post ARTICLE page
+============================================================================
+ Use this when a blog post needs a full article page (not just a card that
+ links to "#"). See posts/how-the-hr-dashboard-works.html for a finished
+ example.
+
+ STEP 1 — Save a copy in the  posts/  folder, e.g.
+          posts/my-new-article.html  (use short, lowercase-with-dashes names).
+
+ STEP 2 — Fill in the title, meta line, heading and body below. Add as many
+          <h2> sections and <p> paragraphs as you need. Reusable pieces you can
+          copy from the example article:
+            • <pre><code>…</code></pre>            code snippet box
+            • <div class="callout plain">…</div>    highlighted note
+            • <div class="callout try">…</div>       "try this" box
+            • <div class="mini-figure">…</div>       emoji + explanation row
+
+ STEP 3 — Point a post at it. In  data/posts.json , set the post's "link" to
+          "./posts/my-new-article.html" (see templates/post.template.html).
+
+ NOTE — paths use ../ because this page lives one folder deep, inside posts/.
+============================================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your article title — Taru Parttimaa</title>
+  <meta name="description" content="A one-sentence summary of the article for search engines.">
+
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../assets/css/article.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <article class="article">
+
+    <a class="back-link" href="../index.html">
+      <ion-icon name="chevron-back-outline"></ion-icon> Back to the site
+    </a>
+
+    <header class="article-head">
+      <div class="article-meta">
+        <span class="tag">Category</span>
+        <span>Month 00, 2026</span>
+        <span class="dot"></span>
+        <span>About 5 min read</span>
+      </div>
+
+      <h1>Your article title</h1>
+
+      <p class="lede">
+        One or two sentences that set up the article and make the reader want to
+        continue.
+      </p>
+
+      <p class="byline">By Taru Parttimaa · HR Specialist</p>
+    </header>
+
+    <div class="article-body">
+
+      <p>Your opening paragraph.</p>
+
+      <h2>A section heading</h2>
+      <p>More text. Use <code>inline code</code> for anything technical.</p>
+
+      <div class="callout plain">
+        <p class="callout-title"><ion-icon name="bulb-outline"></ion-icon> In plain English</p>
+        <p>A short highlighted takeaway.</p>
+      </div>
+
+      <footer class="article-footer">
+        A closing line, links, or a call to action.
+      </footer>
+
+    </div>
+
+  </article>
+
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
