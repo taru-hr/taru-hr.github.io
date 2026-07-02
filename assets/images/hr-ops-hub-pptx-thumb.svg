@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450" role="img" aria-label="HR Operations Hub — PowerPoint embedded on the site">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161616"/>
+      <stop offset="1" stop-color="#101012"/>
+    </linearGradient>
+    <linearGradient id="ppt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ED6C47"/>
+      <stop offset="1" stop-color="#C43E1C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- card background -->
+  <rect width="600" height="450" fill="url(#bg2)"/>
+
+  <!-- faint corner glow (orange, to signal PowerPoint) -->
+  <circle cx="560" cy="40" r="150" fill="#ED6C47" opacity="0.06"/>
+
+  <!-- brand kicker -->
+  <rect x="42" y="44" width="12" height="12" rx="3" fill="#ED6C47"/>
+  <text x="62" y="55" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="3" fill="#ED8A6C">TARU HR · POWERPOINT</text>
+
+  <!-- title -->
+  <text x="44" y="120" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="44" font-weight="700" fill="#FCFCFC">HR Operations Hub</text>
+  <text x="46" y="152" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="17" font-weight="300" fill="#B9B9BD">The original slides, embedded straight into the page</text>
+
+  <!-- embedded-viewer window -->
+  <g transform="translate(44,182)">
+    <!-- window frame -->
+    <rect x="0" y="0" width="420" height="212" rx="12" fill="#F4F4F6" stroke="#2a2a2c"/>
+    <!-- title bar -->
+    <rect x="0" y="0" width="420" height="30" rx="12" fill="#E4E4E8"/>
+    <rect x="0" y="18" width="420" height="12" fill="#E4E4E8"/>
+    <circle cx="18" cy="15" r="5" fill="#ED6C47"/>
+    <circle cx="36" cy="15" r="5" fill="#F2C14E"/>
+    <circle cx="54" cy="15" r="5" fill="#B7B7BD"/>
+    <text x="410" y="19" text-anchor="end" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#8A8A90">Office viewer</text>
+
+    <!-- slide content inside the viewer -->
+    <!-- PowerPoint "P" tile -->
+    <rect x="22" y="52" width="52" height="52" rx="10" fill="url(#ppt)"/>
+    <text x="48" y="90" text-anchor="middle" font-family="'Segoe UI',Georgia,serif" font-size="34" font-weight="700" fill="#FFFFFF">P</text>
+
+    <!-- mini slide title + bullet lines -->
+    <rect x="92" y="58" width="200" height="14" rx="4" fill="#3a3a3d"/>
+    <rect x="92" y="84" width="150" height="9" rx="3" fill="#C9C9CE"/>
+
+    <!-- process-flow chips -->
+    <g transform="translate(24,126)">
+      <rect x="0" y="0" width="74" height="26" rx="7" fill="#EDEDF0" stroke="#D5D5DA"/>
+      <rect x="86" y="0" width="74" height="26" rx="7" fill="#EDEDF0" stroke="#D5D5DA"/>
+      <rect x="172" y="0" width="74" height="26" rx="7" fill="#EDEDF0" stroke="#D5D5DA"/>
+      <rect x="258" y="0" width="74" height="26" rx="7" fill="#EDEDF0" stroke="#D5D5DA"/>
+      <text x="80" y="18" text-anchor="middle" font-size="14" font-weight="700" fill="#ED6C47">›</text>
+      <text x="166" y="18" text-anchor="middle" font-size="14" font-weight="700" fill="#ED6C47">›</text>
+      <text x="252" y="18" text-anchor="middle" font-size="14" font-weight="700" fill="#ED6C47">›</text>
+    </g>
+    <rect x="24" y="168" width="372" height="9" rx="3" fill="#DADADE"/>
+  </g>
+
+  <!-- PPTX file pill -->
+  <g transform="translate(496,196)">
+    <rect x="0" y="0" width="60" height="26" rx="13" fill="#1e1e21" stroke="#ED6C47"/>
+    <text x="30" y="18" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="13" font-weight="600" fill="#ED8A6C">.PPTX</text>
+  </g>
+
+  <!-- "no conversion" note chip -->
+  <g transform="translate(496,236)">
+    <text x="30" y="6" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="11" font-weight="500" fill="#8A8A90">no</text>
+    <text x="30" y="22" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="11" font-weight="500" fill="#8A8A90">convert</text>
+  </g>
+</svg>
