@@ -1,11 +1,11 @@
 [
   {
-    "title": "HR Operations Hub — the PowerPoint, embedded",
+    "title": "HR Operations Hub",
     "category": "Presentation",
     "date": "Jul 02, 2026",
     "dateISO": "2026-07-02",
     "image": "./assets/images/hr-ops-hub-pptx-thumb.svg",
-    "excerpt": "The same deck shown a second way: the original PowerPoint embedded straight into the page with Microsoft's Office viewer — no conversion at all. The simplest route for getting any slide deck online.",
+    "excerpt": "A centralized HR operations hub designed to illustrate essential employee lifecycle processes, supporting efficient HR administration and a positive employee experience.",
     "link": "./posts/hr-operations-hub-powerpoint.html"
   },
   {
