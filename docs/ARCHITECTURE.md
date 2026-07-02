@@ -16,7 +16,6 @@ components/                Each page section as its own HTML partial.
   resume.html                Education & Experience timelines.
   portfolio.html             Project grid + filters (cards come from data/).
   blog.html                  Post grid (cards come from data/).
-  contact.html               Map + contact form.
 data/                      Content as data — add an entry to publish.
   posts.json                 Blog posts.
   prototypes.json            Portfolio projects.
@@ -86,5 +85,4 @@ server above, or just view the published GitHub Pages site.
 | Publish a full article | copy `templates/article-page.template.html` into `posts/`, then point a `data/posts.json` entry's `link` at it |
 | Add a portfolio project | add an entry to `data/prototypes.json` |
 | Add a brand-new nav page | `templates/page-section.template.html` |
-| Change contact map / form target | `components/contact.html` |
 | Tweak the dashboard data | `assets/js/dashboard.js` (top of file) |
