@@ -1,5 +1,14 @@
 [
   {
+    "title": "HR Operations Hub — the PowerPoint, embedded",
+    "category": "Presentation",
+    "date": "Jul 02, 2026",
+    "dateISO": "2026-07-02",
+    "image": "./assets/images/hr-ops-hub-pptx-thumb.svg",
+    "excerpt": "The same deck shown a second way: the original PowerPoint embedded straight into the page with Microsoft's Office viewer — no conversion at all. The simplest route for getting any slide deck online.",
+    "link": "./posts/hr-operations-hub-powerpoint.html"
+  },
+  {
     "title": "Expat Employee Guide — an interactive slide deck",
     "category": "Presentation",
     "date": "Jul 01, 2026",
