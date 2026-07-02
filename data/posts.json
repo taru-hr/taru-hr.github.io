@@ -9,12 +9,12 @@
     "link": "./posts/hr-operations-hub-powerpoint.html"
   },
   {
-    "title": "Expat Employee Guide — an interactive slide deck",
+    "title": "Expat Employee Guide — relocating to Finland",
     "category": "Presentation",
     "date": "Jul 01, 2026",
     "dateISO": "2026-07-01",
     "image": "./assets/images/expat-deck-thumb.svg",
-    "excerpt": "A PowerPoint onboarding guide for employees relocating to Finland, rebuilt as a slideshow that runs right in your browser. Use the arrow keys or swipe — press F for full screen.",
+    "excerpt": "A practical HR onboarding guide for employees relocating to Finland — visas, contracts, tax cards, salary, leave and healthcare — shown as the original PowerPoint, embedded straight into the page.",
     "link": "./posts/expat-guide-finland-slides.html"
   },
   {
