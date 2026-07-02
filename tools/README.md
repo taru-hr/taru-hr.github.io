@@ -51,9 +51,7 @@ tables, images, colours or exact positioning — no automatic tool does that
 reliably. So the output is a clean scaffold you then refine by hand.
 
 That refining is the real work: run the converter, then lay out each slide
-(columns, cards, call-outs) so it matches your theme. The companion tutorial
-[`posts/build-hr-slides-with-reveal-js.html`](../posts/build-hr-slides-with-reveal-js.html)
-explains the editing part in plain English.
+(columns, cards, call-outs) so it matches your theme.
 
 ## Three ways to put a slide deck on the site — which to pick
 
