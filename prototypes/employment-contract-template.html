@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+============================================================================
+ EMPLOYMENT CONTRACT TEMPLATE · Word document embed
+============================================================================
+ A portfolio piece: the one-page Finnish employment contract template shown
+ in the browser with Microsoft's free "Office Online" viewer (which renders
+ any public .docx / .pptx / .xlsx inside an <iframe>) — plus a download link.
+ The .docx must be public (it lives in the repo, so GitHub Pages serves it).
+============================================================================
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employment Contract Template — Taru HR</title>
+  <meta name="description" content="A one-page Finnish employment contract, created as an original portfolio demonstration and shown with Microsoft's Office Online viewer.">
+
+  <link rel="shortcut icon" href="../assets/images/logo.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:        hsl(0, 0%, 7%);
+      --card:      hsl(240, 2%, 13%);
+      --border:    hsl(0, 0%, 22%);
+      --text:      hsl(0, 0%, 84%);
+      --muted:     hsl(0, 0%, 62%);
+      --gold:      hsl(45, 100%, 68%);
+      --gold-soft: hsl(38, 74%, 61%);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      padding: 76px 20px 60px;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; }
+
+    .site-link {
+      position: fixed; top: 14px; left: 16px; z-index: 40;
+      color: var(--muted); text-decoration: none; font-size: 14px;
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(0,0,0,0.35); padding: 6px 12px; border-radius: 999px;
+      backdrop-filter: blur(4px);
+    }
+    .site-link:hover { color: var(--gold); }
+
+    .kicker {
+      color: var(--gold); font-size: 13px; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase; margin: 0 0 10px;
+    }
+    h1 { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 34px;
+      margin: 0 0 12px; color: #fff; letter-spacing: 0.2px; }
+    .lead { color: var(--muted); font-size: 17px; max-width: 62ch; margin: 0 0 26px; }
+
+    /* portrait document frame around the Office viewer */
+    .viewer {
+      position: relative; width: 100%; max-width: 800px; margin: 0 auto;
+      padding-top: 116%;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+    }
+    .viewer iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 22px 0 34px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 20px; border-radius: 999px; font-size: 15px; font-weight: 500;
+      text-decoration: none; border: 1px solid var(--border);
+      color: var(--text); background: var(--card); transition: 0.15s ease;
+    }
+    .btn:hover { border-color: var(--gold); color: var(--gold); }
+    .btn.primary { background: var(--gold); color: #1a1a1a; border-color: var(--gold); }
+    .btn.primary:hover { background: var(--gold-soft); color: #1a1a1a; }
+
+    .note {
+      background: var(--card); border: 1px solid var(--border);
+      border-left: 4px solid var(--gold); border-radius: 12px;
+      padding: 18px 22px; font-size: 15px; color: var(--muted); max-width: 820px; margin: 0 auto;
+    }
+    .note h2 { font-size: 16px; color: var(--gold); margin: 0 0 8px; font-weight: 600; letter-spacing: 0.3px; }
+    .note p { margin: 0.5em 0; }
+    ion-icon { vertical-align: -2px; pointer-events: none; }
+  </style>
+</head>
+
+<body>
+
+  <a class="site-link" href="../index.html">
+    <ion-icon name="chevron-back-outline"></ion-icon> Back to site
+  </a>
+
+  <div class="wrap">
+    <p class="kicker">Portfolio · Template</p>
+    <h1>Employment Contract Template</h1>
+    <p class="lead">
+      A one-page Finnish employment contract, created as an original portfolio demonstration.
+      It's shown below with Microsoft's free Office Online viewer — open it full screen, or download
+      the editable Word file.
+    </p>
+
+    <!-- THE EMBED. The src wraps the public address of the .docx with the Office viewer. -->
+    <div class="viewer">
+      <iframe
+        src="https://view.officeapps.live.com/op/embed.aspx?src=https://taru-hr.github.io/Employment-Contract-Template.docx"
+        title="Employment Contract Template — Word document"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="actions">
+      <a class="btn primary"
+         href="https://view.officeapps.live.com/op/view.aspx?src=https://taru-hr.github.io/Employment-Contract-Template.docx"
+         target="_blank" rel="noopener">
+        <ion-icon name="expand-outline"></ion-icon> Open full screen
+      </a>
+      <a class="btn" href="../Employment-Contract-Template.docx" download>
+        <ion-icon name="download-outline"></ion-icon> Download the .docx
+      </a>
+    </div>
+
+    <div class="note">
+      <h2>About this template</h2>
+      <p>A clean, one-page employment contract with the sections a Finnish contract typically needs —
+         parties, job title, start date, employment type, probation, working hours, salary, annual
+         leave, place of work, collective agreement (TES), confidentiality, termination notice and
+         signatures. Fields to complete are shown in grey.</p>
+      <p>This is an original portfolio example for demonstration only. It is not based on or copied
+         from any employer's confidential documents and should not be used as legal advice.</p>
+    </div>
+  </div>
+
+  <!-- ionicons — the same icon set used across the rest of the site -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
