@@ -150,13 +150,28 @@ function scopeFor(year, dept) {
   };
 }
 
-// Monthly exits for the current scope (department scaled from the org shape).
+// Monthly exits for the current scope. For a single department we spread its
+// annual exits across the months in proportion to the organisation's monthly
+// shape, then use largest-remainder rounding so the months always add up to the
+// department's exact total — otherwise small teams (e.g. People & HR, with only
+// a few exits) round down to all-zeros and the chart looks empty.
 function monthlyExitsFor(year, dept) {
   const org = DATA[year].monthlyExits;
   if (dept === 'All') return org.slice();
   const orgTotal = org.reduce(function (a, b) { return a + b; }, 0);
   const deptExits = DATA[year].departments[dept].exits;
-  return org.map(function (m) { return Math.round((m / orgTotal) * deptExits); });
+
+  const exact = org.map(function (m) { return (m / orgTotal) * deptExits; });
+  const result = exact.map(Math.floor);
+  let remaining = deptExits - result.reduce(function (a, b) { return a + b; }, 0);
+
+  // hand the leftover whole exits to the months with the largest fractional parts
+  exact
+    .map(function (v, i) { return { i: i, frac: v - Math.floor(v) }; })
+    .sort(function (a, b) { return b.frac - a.frac; })
+    .forEach(function (o) { if (remaining > 0) { result[o.i] += 1; remaining -= 1; } });
+
+  return result;
 }
 
 // ---------------------------------------------------------------------------
