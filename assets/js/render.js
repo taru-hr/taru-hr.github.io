@@ -49,6 +49,104 @@ async function renderList(config) {
   }
 }
 
+// Renders the Personal Development section (rolled-up stats, a learning-path
+// journey, and the law areas covered) from data/development.json. Everything is
+// data-driven: add a certificate to that file and it appears here automatically.
+async function renderDevelopment() {
+  const statsEl = document.querySelector('[data-dev-stats]');
+  const journeyEl = document.querySelector('[data-dev-journey]');
+  const topicsEl = document.querySelector('[data-dev-topics]');
+  if (!statsEl || !journeyEl || !topicsEl) return; // section not on this page
+
+  try {
+    const res = await fetch('./data/development.json');
+    if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+    const data = await res.json();
+
+    const esc = escapeHtml;
+    const paths = data.paths || [];
+    const allCerts = paths.reduce(function (a, p) { return a.concat(p.certificates || []); }, []);
+
+    // ---- rolled-up stats ----
+    const totalModules = allCerts.reduce(function (a, c) { return a + (Number(c.modules) || 0); }, 0);
+    const totalMinutes = allCerts.reduce(function (a, c) { return a + (Number(c.minutes) || 0); }, 0);
+    const stats = [
+      { num: String(allCerts.length), label: 'Certificates earned' },
+      { num: String(totalModules), label: 'Modules completed' },
+      { num: Math.round(totalMinutes / 60) + '<span class="dev-stat-unit">h</span>', label: 'Hours of study' },
+      { num: String((data.topics || []).length), label: 'Law areas covered' }
+    ];
+    statsEl.innerHTML = stats.map(function (s) {
+      return '<li class="dev-stat"><span class="dev-stat-num">' + s.num +
+        '</span><span class="dev-stat-label">' + s.label + '</span></li>';
+    }).join('');
+
+    // ---- one completed-certificate node ----
+    function certNode(c) {
+      return '' +
+        '<li class="dev-node is-done">' +
+          '<span class="dev-node-dot"><ion-icon name="ribbon-outline"></ion-icon></span>' +
+          '<div class="dev-node-body">' +
+            '<p class="dev-node-tag">' + esc(c.level) + ' &middot; Completed &middot; ' + esc(c.date) + '</p>' +
+            '<div class="credential">' +
+              '<a class="credential-media" href="' + esc(c.pdf) + '" target="_blank" rel="noopener" ' +
+                 'aria-label="Open the ' + esc(c.title) + ' certificate (PDF)">' +
+                '<img src="' + esc(c.image) + '" alt="' + esc(c.title) + ' certificate from ' + esc(c.provider) + '" loading="lazy">' +
+                '<span class="credential-media-hint"><ion-icon name="expand-outline"></ion-icon> View certificate</span>' +
+              '</a>' +
+              '<div class="credential-info">' +
+                '<h4 class="credential-title">' + esc(c.title) + '</h4>' +
+                '<p class="credential-sub">' + esc(c.titleFi) + '</p>' +
+                '<p class="credential-provider"><ion-icon name="school-outline"></ion-icon> ' +
+                  esc(c.provider) + ' &nbsp;&middot;&nbsp; ' + esc(c.levelLabel) + ' &nbsp;&middot;&nbsp; ' + esc(c.duration) + '</p>' +
+                '<p class="credential-desc">' + esc(c.desc) + '</p>' +
+                '<ul class="credential-meta">' +
+                  '<li><ion-icon name="albums-outline"></ion-icon> ' + esc(c.modules) + ' modules</li>' +
+                  '<li><ion-icon name="time-outline"></ion-icon> ' + esc(c.duration) + '</li>' +
+                  '<li><ion-icon name="ribbon-outline"></ion-icon> ' + esc(c.pht) + ' PHT</li>' +
+                  '<li><ion-icon name="finger-print-outline"></ion-icon> ID ' + esc(c.certId) + '</li>' +
+                '</ul>' +
+                '<a class="dev-btn" href="' + esc(c.pdf) + '" target="_blank" rel="noopener">' +
+                  '<ion-icon name="document-text-outline"></ion-icon> View certificate</a>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</li>';
+    }
+
+    // ---- journey: one group per learning path, then the roadmap ----
+    let html = '';
+    paths.forEach(function (p) {
+      html += '<section class="dev-path">' +
+        '<p class="dev-path-label"><ion-icon name="git-branch-outline"></ion-icon> ' +
+          esc(p.path) + ' &middot; ' + esc(p.pathFi) + '</p>' +
+        '<ol class="dev-path-nodes">' + (p.certificates || []).map(certNode).join('') + '</ol>' +
+      '</section>';
+    });
+    if (data.roadmap && data.roadmap.length) {
+      html += '<section class="dev-path dev-path--roadmap">' +
+        '<p class="dev-path-label"><ion-icon name="rocket-outline"></ion-icon> On the roadmap</p>' +
+        '<ol class="dev-path-nodes">' + data.roadmap.map(function (r) {
+          return '<li class="dev-node is-planned"><span class="dev-node-dot"></span>' +
+            '<div class="dev-node-body"><h4 class="dev-node-title">' + esc(r.title) +
+            '</h4><p class="dev-node-text">' + esc(r.text) + '</p></div></li>';
+        }).join('') + '</ol>' +
+      '</section>';
+    }
+    journeyEl.innerHTML = html;
+
+    // ---- law areas ----
+    topicsEl.innerHTML = (data.topics || []).map(function (t) {
+      return '<li class="dev-topic"><ion-icon name="' + esc(t.icon) + '"></ion-icon>' +
+        '<div><p class="dev-topic-en">' + esc(t.en) + '</p>' +
+        '<p class="dev-topic-fi">' + esc(t.fi) + '</p></div></li>';
+    }).join('');
+
+  } catch (err) {
+    console.error('[development] Could not render from ./data/development.json', err);
+  }
+}
+
 // Called by the bootstrap (include.js) after components are injected and
 // before interactive behaviour is initialised.
 async function renderCollections() {
@@ -62,7 +160,8 @@ async function renderCollections() {
       dataUrl: './data/posts.json',
       listSelector: '[data-blog-list]',
       templateSelector: '[data-blog-template]'
-    })
+    }),
+    renderDevelopment()
   ]);
 }
 

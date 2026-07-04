@@ -1,0 +1,37 @@
+<!--
+  Component: Personal Development page
+  A creative, data-driven "learning journey": headline stats, a timeline grouped
+  by learning PATH (each path holds its certificates as levels), a roadmap, and
+  the law areas covered. The content below is rendered from data/development.json
+  by renderDevelopment() in assets/js/render.js.
+
+  To add another certificate:
+    1. Drop its preview image + PDF into assets/certificates/
+    2. Add one entry to the right path's "certificates" list in data/development.json
+       (or add a whole new path). The stats and timeline update automatically.
+-->
+<article class="development" data-page="development">
+
+  <header>
+    <h2 class="h2 article-title">Development</h2>
+  </header>
+
+  <p class="dev-intro">
+    I keep my HR practice sharp through continuous, hands-on learning. Here's my journey so
+    far &mdash; and where it's heading.
+  </p>
+
+  <!-- rolled-up stats (rendered) -->
+  <ul class="dev-stats" data-dev-stats></ul>
+
+  <h3 class="dev-subhead">My learning journey</h3>
+
+  <!-- learning-path timeline + roadmap (rendered) -->
+  <div class="dev-journey" data-dev-journey></div>
+
+  <h3 class="dev-subhead">Law areas I've covered</h3>
+
+  <!-- law areas (rendered) -->
+  <ul class="dev-topics" data-dev-topics></ul>
+
+</article>

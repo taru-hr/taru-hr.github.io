@@ -1,0 +1,62 @@
+{
+  "paths": [
+    {
+      "path": "HR Law",
+      "pathFi": "Henkilöstöhallinnon juridiikka",
+      "certificates": [
+        {
+          "level": "Level 1",
+          "title": "HR Law 1",
+          "titleFi": "Henkilöstöhallinnon juridiikka 1",
+          "provider": "Eduhouse",
+          "levelLabel": "Advanced",
+          "date": "December 2025",
+          "duration": "10 h 6 min",
+          "modules": 23,
+          "minutes": 606,
+          "pht": "7.35",
+          "certId": "172216608",
+          "desc": "Core Finnish employment law for HR: employment contracts, working hours, annual holidays, occupational safety, and accident & pension law: across 23 focused modules.",
+          "image": "./assets/certificates/hr-law-1-certificate.png",
+          "pdf": "./assets/certificates/hr-law-1-certificate.pdf"
+        },
+        {
+          "level": "Level 2",
+          "title": "HR Law 2",
+          "titleFi": "Henkilöstöhallinnon juridiikka 2",
+          "provider": "Eduhouse",
+          "levelLabel": "Advanced",
+          "date": "January 2026",
+          "duration": "4 h 59 min",
+          "modules": 16,
+          "minutes": 299,
+          "pht": "3.90",
+          "certId": "175257764",
+          "desc": "Advanced HR law workplace development and equality plans, handling underperformance, inappropriate behaviour and harassment, and equality & non-discrimination legislation across 16 modules.",
+          "image": "./assets/certificates/hr-law-2-certificate.png",
+          "pdf": "./assets/certificates/hr-law-2-certificate.pdf"
+        }
+      ]
+    }
+  ],
+  "roadmap": [
+    {
+      "title": "People analytics & HR reporting",
+      "text": "Turning HR data into clear insight: building on my interactive HR dashboard."
+    },
+    {
+      "title": "Staying current with Finnish employment law",
+      "text": "Keeping my legal knowledge fresh as legislation and collective agreements evolve."
+    }
+  ],
+  "topics": [
+    { "en": "Employment Contracts Act", "fi": "Työsopimuslaki", "icon": "document-text-outline" },
+    { "en": "Working Hours Act", "fi": "Työaikalaki", "icon": "time-outline" },
+    { "en": "Annual Holidays Act", "fi": "Vuosilomalaki", "icon": "sunny-outline" },
+    { "en": "Occupational Safety", "fi": "Työturvallisuuslaki", "icon": "shield-checkmark-outline" },
+    { "en": "Accidents & Pensions", "fi": "Työtapaturma & TyEL", "icon": "medkit-outline" },
+    { "en": "Equality & Non-discrimination", "fi": "Yhdenvertaisuus & tasa-arvo", "icon": "people-outline" },
+    { "en": "Workplace Plans", "fi": "Kehittämis- & tasa-arvosuunnitelma", "icon": "clipboard-outline" },
+    { "en": "Performance & Conduct", "fi": "Alisuoriutuminen & häirintä", "icon": "alert-circle-outline" }
+  ]
+}
