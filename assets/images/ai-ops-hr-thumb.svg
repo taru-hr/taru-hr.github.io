@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450" role="img" aria-label="AI in Operational HR - PowerPoint guide embedded on the site">
+  <defs>
+    <linearGradient id="aibg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161616"/>
+      <stop offset="1" stop-color="#101012"/>
+    </linearGradient>
+    <linearGradient id="aitile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFD65C"/>
+      <stop offset="1" stop-color="#F2A93E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- card background -->
+  <rect width="600" height="450" fill="url(#aibg)"/>
+
+  <!-- faint corner glow (gold, matches the deck theme) -->
+  <circle cx="560" cy="40" r="150" fill="#FFD65C" opacity="0.06"/>
+
+  <!-- brand kicker -->
+  <rect x="42" y="44" width="12" height="12" rx="3" fill="#FFD65C"/>
+  <text x="62" y="55" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="3" fill="#E8C87A">TARU HR &#183; POWERPOINT</text>
+
+  <!-- title -->
+  <text x="44" y="118" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="40" font-weight="700" fill="#FCFCFC">AI in Operational HR</text>
+  <text x="46" y="150" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="16" font-weight="300" fill="#B9B9BD">A practical guide: scenario, prompt, AI draft, HR review</text>
+
+  <!-- embedded-viewer window -->
+  <g transform="translate(44,182)">
+    <!-- window frame -->
+    <rect x="0" y="0" width="420" height="212" rx="12" fill="#F4F4F6" stroke="#2a2a2c"/>
+    <!-- title bar -->
+    <rect x="0" y="0" width="420" height="30" rx="12" fill="#E4E4E8"/>
+    <rect x="0" y="18" width="420" height="12" fill="#E4E4E8"/>
+    <circle cx="18" cy="15" r="5" fill="#FFB03A"/>
+    <circle cx="36" cy="15" r="5" fill="#F2C14E"/>
+    <circle cx="54" cy="15" r="5" fill="#B7B7BD"/>
+    <text x="410" y="19" text-anchor="end" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#8A8A90">Office viewer</text>
+
+    <!-- AI tile -->
+    <rect x="22" y="52" width="52" height="52" rx="10" fill="url(#aitile)"/>
+    <text x="48" y="88" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="22" font-weight="700" fill="#1a1a1a">AI</text>
+
+    <!-- mini slide title + subtitle -->
+    <rect x="92" y="58" width="210" height="14" rx="4" fill="#3a3a3d"/>
+    <rect x="92" y="84" width="150" height="9" rx="3" fill="#C9C9CE"/>
+
+    <!-- prompt -> AI draft chips -->
+    <g transform="translate(24,126)">
+      <rect x="0" y="0" width="118" height="26" rx="7" fill="#EDEDF0" stroke="#D5D5DA"/>
+      <text x="59" y="18" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="600" fill="#6a6a70">PROMPT</text>
+      <text x="148" y="19" text-anchor="middle" font-size="16" font-weight="700" fill="#E0A73A">&#8250;</text>
+      <rect x="176" y="0" width="118" height="26" rx="7" fill="#FFF6DE" stroke="#F2D488"/>
+      <text x="235" y="18" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="600" fill="#9a7b1e">AI DRAFT</text>
+    </g>
+
+    <!-- HR review checkmarks -->
+    <g transform="translate(24,166)">
+      <circle cx="7" cy="7" r="7" fill="#2fae66"/>
+      <path d="M4 7.5 l2 2 l4.2 -4.6" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="22" y="3" width="120" height="9" rx="3" fill="#DADADE"/>
+      <g transform="translate(160,0)">
+        <circle cx="7" cy="7" r="7" fill="#2fae66"/>
+        <path d="M4 7.5 l2 2 l4.2 -4.6" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="22" y="3" width="118" height="9" rx="3" fill="#DADADE"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- PPTX file pill -->
+  <g transform="translate(496,196)">
+    <rect x="0" y="0" width="60" height="26" rx="13" fill="#1e1e21" stroke="#FFD65C"/>
+    <text x="30" y="18" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="13" font-weight="600" fill="#E8C87A">.PPTX</text>
+  </g>
+
+  <!-- topics count chip -->
+  <g transform="translate(496,236)">
+    <text x="30" y="6" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="11" font-weight="500" fill="#8A8A90">9</text>
+    <text x="30" y="22" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="11" font-weight="500" fill="#8A8A90">topics</text>
+  </g>
+</svg>

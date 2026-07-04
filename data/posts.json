@@ -1,5 +1,14 @@
 [
   {
+    "title": "AI in Operational HR",
+    "category": "Presentation",
+    "date": "Jul 04, 2026",
+    "dateISO": "2026-07-04",
+    "image": "./assets/images/ai-ops-hr-thumb.svg",
+    "excerpt": "A practical guide to using AI in everyday operational HR. Nine common tasks, from recruitment and onboarding to reporting, each shown as a real scenario with an example prompt, a sample AI draft and an HR review step, plus a ready-to-use prompt library.",
+    "link": "./posts/ai-in-operational-hr.html"
+  },
+  {
     "title": "HR Operations Hub",
     "category": "Presentation",
     "date": "Jul 02, 2026",
