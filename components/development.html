@@ -5,10 +5,14 @@
   the law areas covered. The content below is rendered from data/development.json
   by renderDevelopment() in assets/js/render.js.
 
-  To add another certificate:
+  To add another certificate (big preview card):
     1. Drop its preview image + PDF into assets/certificates/
     2. Add one entry to the right path's "certificates" list in data/development.json
        (or add a whole new path). The stats and timeline update automatically.
+
+  To add an "Other certificates" list item (a simple row, no preview):
+    Add an entry to the "otherCertificates" list in data/development.json,
+    e.g. { "title": "...", "issuer": "...", "year": "2025" }  (a "pdf" link is optional).
 -->
 <article class="development" data-page="development">
 
@@ -28,6 +32,12 @@
 
   <!-- learning-path timeline + roadmap (rendered) -->
   <div class="dev-journey" data-dev-journey></div>
+
+  <!-- other certificates: a simple list (auto-hidden until otherCertificates has items) -->
+  <section class="dev-others-wrap" data-dev-others-section hidden>
+    <h3 class="dev-subhead">Other certificates</h3>
+    <ul class="dev-others" data-dev-others></ul>
+  </section>
 
   <h3 class="dev-subhead">Law areas I've covered</h3>
 

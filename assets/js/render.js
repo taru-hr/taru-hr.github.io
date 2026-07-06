@@ -101,9 +101,10 @@ async function renderDevelopment() {
                   esc(c.provider) + ' &nbsp;&middot;&nbsp; ' + esc(c.levelLabel) + ' &nbsp;&middot;&nbsp; ' + esc(c.duration) + '</p>' +
                 '<p class="credential-desc">' + esc(c.desc) + '</p>' +
                 '<ul class="credential-meta">' +
-                  '<li><ion-icon name="albums-outline"></ion-icon> ' + esc(c.modules) + ' modules</li>' +
+                  (c.lang ? '<li class="cert-lang"><ion-icon name="language-outline"></ion-icon> ' + esc(c.lang) + '</li>' : '') +
+                  (c.modules ? '<li><ion-icon name="albums-outline"></ion-icon> ' + esc(c.modules) + ' modules</li>' : '') +
                   '<li><ion-icon name="time-outline"></ion-icon> ' + esc(c.duration) + '</li>' +
-                  '<li><ion-icon name="ribbon-outline"></ion-icon> ' + esc(c.pht) + ' PHT</li>' +
+                  (c.pht ? '<li><ion-icon name="ribbon-outline"></ion-icon> ' + esc(c.pht) + ' PHT</li>' : '') +
                   '<li><ion-icon name="finger-print-outline"></ion-icon> ID ' + esc(c.certId) + '</li>' +
                 '</ul>' +
                 '<a class="dev-btn" href="' + esc(c.pdf) + '" target="_blank" rel="noopener">' +
@@ -141,6 +142,28 @@ async function renderDevelopment() {
         '<div><p class="dev-topic-en">' + esc(t.en) + '</p>' +
         '<p class="dev-topic-fi">' + esc(t.fi) + '</p></div></li>';
     }).join('');
+
+    // ---- other certificates: a simple list (optional, hidden if none) ----
+    const othersSection = document.querySelector('[data-dev-others-section]');
+    const othersEl = document.querySelector('[data-dev-others]');
+    if (othersSection && othersEl) {
+      const others = data.otherCertificates || [];
+      if (others.length) {
+        othersEl.innerHTML = others.map(function (o) {
+          const meta = [o.issuer, o.year].filter(Boolean).map(esc).join(' &middot; ');
+          const title = o.pdf
+            ? '<a href="' + esc(o.pdf) + '" target="_blank" rel="noopener">' + esc(o.title) + '</a>'
+            : esc(o.title);
+          return '<li class="other-cert"><ion-icon name="ribbon-outline"></ion-icon>' +
+            '<div class="other-cert-body"><p class="other-cert-title">' + title + '</p>' +
+            (meta ? '<p class="other-cert-meta">' + meta + '</p>' : '') +
+            '</div>' +
+            (o.lang ? '<span class="cert-lang"><ion-icon name="language-outline"></ion-icon> ' + esc(o.lang) + '</span>' : '') +
+            '</li>';
+        }).join('');
+        othersSection.removeAttribute('hidden');
+      }
+    }
 
   } catch (err) {
     console.error('[development] Could not render from ./data/development.json', err);

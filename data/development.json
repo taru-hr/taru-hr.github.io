@@ -9,6 +9,7 @@
           "title": "HR Law 1",
           "titleFi": "Henkilöstöhallinnon juridiikka 1",
           "provider": "Eduhouse",
+          "lang": "Finnish",
           "levelLabel": "Advanced",
           "date": "December 2025",
           "duration": "10 h 6 min",
@@ -25,6 +26,7 @@
           "title": "HR Law 2",
           "titleFi": "Henkilöstöhallinnon juridiikka 2",
           "provider": "Eduhouse",
+          "lang": "Finnish",
           "levelLabel": "Advanced",
           "date": "January 2026",
           "duration": "4 h 59 min",
@@ -37,7 +39,33 @@
           "pdf": "./assets/certificates/hr-law-2-certificate.pdf"
         }
       ]
+    },
+    {
+      "path": "AI Skills",
+      "pathFi": "Tekoälytaidot",
+      "certificates": [
+        {
+          "level": "Foundations",
+          "title": "Claude Basics",
+          "titleFi": "Claude perusteet",
+          "provider": "Eduhouse",
+          "lang": "Finnish",
+          "levelLabel": "Beginner",
+          "date": "July 2026",
+          "duration": "2 h 55 min",
+          "modules": 8,
+          "minutes": 175,
+          "certId": "197821233",
+          "desc": "A practical, hands-on introduction to using the AI assistant Claude effectively at work: getting started, data protection and security, everyday work use, file handling, prompt writing, and building small custom apps, across 8 short modules.",
+          "image": "./assets/certificates/Claude-basics-certificate.png",
+          "pdf": "./assets/certificates/Claude-basics-certificate.pdf"
+        }
+      ]
     }
+  ],
+  "otherCertificates": [
+    { "title": "HR Methods for Promoting Workplace Wellbeing", "issuer": "Eduhouse", "year": "2026", "lang": "Finnish", "pdf": "./assets/certificates/hr-wellbeing-certificate.pdf" },
+    { "title": "New Payroll Specialist: Mastering the Basics", "issuer": "Eduhouse", "year": "2026", "lang": "Finnish", "pdf": "./assets/certificates/payroll-basics-certificate.pdf" }
   ],
   "roadmap": [
     {
