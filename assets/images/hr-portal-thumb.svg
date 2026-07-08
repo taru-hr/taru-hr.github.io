@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450" role="img" aria-label="HR Operations Portal - a live HR operations web app">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161616"/>
+      <stop offset="1" stop-color="#101012"/>
+    </linearGradient>
+    <linearGradient id="pbar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#E5AF52"/>
+      <stop offset="1" stop-color="#FFD65C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="450" fill="url(#pbg)"/>
+  <circle cx="560" cy="40" r="150" fill="#FFD65C" opacity="0.06"/>
+
+  <!-- brand kicker -->
+  <rect x="42" y="44" width="12" height="12" rx="3" fill="#FFD65C"/>
+  <text x="62" y="55" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="3" fill="#FFD65C">TARU HR &#183; WEB APP</text>
+
+  <!-- title -->
+  <text x="44" y="112" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="38" font-weight="700" fill="#FCFCFC">HR Operations Portal</text>
+  <text x="46" y="142" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="16" font-weight="300" fill="#B9B9BD">A live, interactive HR operations system</text>
+
+  <!-- LIVE status pill -->
+  <g transform="translate(44,160)">
+    <rect x="0" y="0" width="72" height="26" rx="13" fill="#141416" stroke="#3fae6a"/>
+    <circle cx="18" cy="13" r="4" fill="#4ccf7e"/>
+    <text x="44" y="18" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="600" letter-spacing="1" fill="#7fe0a3">LIVE</text>
+  </g>
+
+  <!-- dashboard app window -->
+  <g transform="translate(44,206)">
+    <rect x="0" y="0" width="512" height="212" rx="12" fill="#1b1b20" stroke="#2a2a30"/>
+    <!-- title bar -->
+    <rect x="0" y="0" width="512" height="28" rx="12" fill="#232329"/>
+    <rect x="0" y="16" width="512" height="12" fill="#232329"/>
+    <circle cx="16" cy="14" r="4" fill="#E5675A"/>
+    <circle cx="32" cy="14" r="4" fill="#E7B04B"/>
+    <circle cx="48" cy="14" r="4" fill="#59B36B"/>
+    <text x="256" y="18" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10" fill="#6f6f78">taru-hr.github.io/hr-operations-portal</text>
+
+    <!-- sidebar -->
+    <rect x="0" y="28" width="92" height="184" fill="#17171b"/>
+    <rect x="16" y="46" width="60" height="9" rx="4" fill="#FFD65C"/>
+    <g fill="#3a3a42">
+      <rect x="16" y="70" width="60" height="8" rx="4"/>
+      <rect x="16" y="90" width="60" height="8" rx="4"/>
+      <rect x="16" y="110" width="60" height="8" rx="4"/>
+      <rect x="16" y="130" width="44" height="8" rx="4"/>
+    </g>
+
+    <!-- KPI tiles -->
+    <g transform="translate(108,44)">
+      <rect x="0" y="0" width="122" height="52" rx="8" fill="#212127" stroke="#2c2c33"/>
+      <rect x="132" y="0" width="122" height="52" rx="8" fill="#212127" stroke="#2c2c33"/>
+      <rect x="264" y="0" width="122" height="52" rx="8" fill="#212127" stroke="#2c2c33"/>
+      <text x="12" y="26" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700" fill="#FFD65C">512</text>
+      <text x="144" y="26" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700" fill="#FCFCFC">1.4%</text>
+      <text x="276" y="26" font-family="'Segoe UI',Arial,sans-serif" font-size="18" font-weight="700" fill="#FCFCFC">24</text>
+      <g fill="#6f6f78" font-family="'Segoe UI',Arial,sans-serif" font-size="8">
+        <text x="12" y="42">Headcount</text>
+        <text x="144" y="42">Turnover</text>
+        <text x="276" y="42">Open roles</text>
+      </g>
+    </g>
+
+    <!-- bar chart panel -->
+    <g transform="translate(108,110)">
+      <rect x="0" y="0" width="240" height="86" rx="8" fill="#212127" stroke="#2c2c33"/>
+      <g transform="translate(16,16)">
+        <rect x="0"   y="34" width="20" height="36" rx="3" fill="url(#pbar)"/>
+        <rect x="34"  y="22" width="20" height="48" rx="3" fill="url(#pbar)"/>
+        <rect x="68"  y="42" width="20" height="28" rx="3" fill="url(#pbar)"/>
+        <rect x="102" y="10" width="20" height="60" rx="3" fill="url(#pbar)"/>
+        <rect x="136" y="28" width="20" height="42" rx="3" fill="url(#pbar)"/>
+        <rect x="170" y="18" width="20" height="52" rx="3" fill="url(#pbar)"/>
+      </g>
+    </g>
+
+    <!-- list panel -->
+    <g transform="translate(360,110)">
+      <rect x="0" y="0" width="134" height="86" rx="8" fill="#212127" stroke="#2c2c33"/>
+      <g transform="translate(12,18)">
+        <circle cx="5" cy="4" r="4" fill="#FFD65C"/>
+        <rect x="16" y="0" width="98" height="8" rx="4" fill="#43434c"/>
+        <circle cx="5" cy="26" r="4" fill="#3a3a42"/>
+        <rect x="16" y="22" width="98" height="8" rx="4" fill="#33333b"/>
+        <circle cx="5" cy="48" r="4" fill="#3a3a42"/>
+        <rect x="16" y="44" width="76" height="8" rx="4" fill="#33333b"/>
+      </g>
+    </g>
+  </g>
+</svg>

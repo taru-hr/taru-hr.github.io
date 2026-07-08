@@ -24,6 +24,10 @@
       </li>
 
       <li class="filter-item">
+        <button data-filter-btn>Web Apps</button>
+      </li>
+
+      <li class="filter-item">
         <button data-filter-btn>Analytics</button>
       </li>
 
@@ -60,6 +64,10 @@
         </li>
 
         <li class="select-item">
+          <button data-select-item>Web Apps</button>
+        </li>
+
+        <li class="select-item">
           <button data-select-item>Analytics</button>
         </li>
 
@@ -85,7 +93,7 @@
     -->
     <template data-project-template>
       <li class="project-item  active" data-filter-item data-category="{{category}}">
-        <a href="{{link}}" data-project-link>
+        <a href="{{link}}" data-project-link target="{{target}}" rel="noopener">
 
           <figure class="project-img">
             <div class="project-item-icon-box">

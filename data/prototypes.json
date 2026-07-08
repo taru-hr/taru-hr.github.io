@@ -1,5 +1,14 @@
 [
   {
+    "title": "HR Operations Portal",
+    "category": "web apps",
+    "categoryLabel": "Web Apps",
+    "image": "./assets/images/hr-portal-thumb.svg",
+    "icon": "grid-outline",
+    "link": "https://taru-hr.github.io/hr-operations-portal/#dashboard",
+    "target": "_blank"
+  },
+  {
     "title": "HR Analytics Dashboard",
     "category": "dashboards",
     "categoryLabel": "Dashboards",
