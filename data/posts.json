@@ -1,5 +1,14 @@
 [
   {
+    "title": "Working Hour System Implementation",
+    "category": "Presentation",
+    "date": "Jul 05, 2026",
+    "dateISO": "2026-07-05",
+    "image": "./assets/images/working-hour-system-thumb.svg",
+    "excerpt": "A demonstration HR project plan for rolling out a working time and attendance system across a 1,000+ employee organisation: business case, budget, governance, timeline, risks, change management, go-live and hypercare, plus KPIs and AI opportunities.",
+    "link": "./posts/working-hour-system-implementation.html"
+  },
+  {
     "title": "AI in Operational HR",
     "category": "Presentation",
     "date": "Jul 04, 2026",

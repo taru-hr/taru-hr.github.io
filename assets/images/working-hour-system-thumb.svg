@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450" role="img" aria-label="Working Hour System Implementation - HR project plan (PowerPoint)">
+  <defs>
+    <linearGradient id="whbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#161616"/>
+      <stop offset="1" stop-color="#101012"/>
+    </linearGradient>
+    <linearGradient id="whbar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFD65C"/>
+      <stop offset="1" stop-color="#F2A93E"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="450" fill="url(#whbg)"/>
+  <circle cx="560" cy="40" r="150" fill="#FFD65C" opacity="0.06"/>
+
+  <!-- brand kicker -->
+  <rect x="42" y="44" width="12" height="12" rx="3" fill="#FFD65C"/>
+  <text x="62" y="55" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="3" fill="#E8C87A">TARU HR &#183; POWERPOINT</text>
+
+  <!-- title -->
+  <text x="44" y="102" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="32" font-weight="700" fill="#FCFCFC">Working Hour System</text>
+  <text x="44" y="136" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="32" font-weight="700" fill="#FFD65C">Implementation</text>
+  <text x="46" y="164" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="15" font-weight="300" fill="#B9B9BD">An HR project plan, business case to go-live</text>
+
+  <!-- viewer window -->
+  <g transform="translate(44,186)">
+    <rect x="0" y="0" width="420" height="216" rx="12" fill="#F4F4F6" stroke="#2a2a2c"/>
+    <!-- title bar -->
+    <rect x="0" y="0" width="420" height="28" rx="12" fill="#E4E4E8"/>
+    <rect x="0" y="16" width="420" height="12" fill="#E4E4E8"/>
+    <circle cx="16" cy="14" r="4.5" fill="#ED6C47"/>
+    <circle cx="32" cy="14" r="4.5" fill="#F2C14E"/>
+    <circle cx="48" cy="14" r="4.5" fill="#B7B7BD"/>
+    <text x="408" y="18" text-anchor="end" font-family="'Segoe UI',Arial,sans-serif" font-size="11" fill="#8A8A90">Office viewer</text>
+
+    <!-- slide content: timeline / roadmap -->
+    <text x="20" y="52" font-family="'Segoe UI',Arial,sans-serif" font-size="13" font-weight="700" fill="#2b2b2e">Timeline &amp; roadmap</text>
+    <text x="20" y="67" font-family="'Segoe UI',Arial,sans-serif" font-size="9" fill="#8A8A90">9 phases &#183; ~15 months</text>
+
+    <!-- month axis -->
+    <g stroke="#E2E2E6" stroke-width="1">
+      <line x1="150" y1="80" x2="150" y2="200"/>
+      <line x1="212" y1="80" x2="212" y2="200"/>
+      <line x1="274" y1="80" x2="274" y2="200"/>
+      <line x1="336" y1="80" x2="336" y2="200"/>
+      <line x1="398" y1="80" x2="398" y2="200"/>
+    </g>
+
+    <!-- gantt row labels -->
+    <g font-family="'Segoe UI',Arial,sans-serif" font-size="8.5" fill="#5f5f66">
+      <text x="20" y="92">Initiation</text>
+      <text x="20" y="108">Requirements</text>
+      <text x="20" y="124">Design &amp; config</text>
+      <text x="20" y="140">Data migration</text>
+      <text x="20" y="156">Testing</text>
+      <text x="20" y="172">Training</text>
+      <text x="20" y="188">Go-live &amp; hypercare</text>
+    </g>
+    <!-- gantt bars -->
+    <g>
+      <rect x="150" y="86"  width="30" height="8" rx="4" fill="url(#whbar)"/>
+      <rect x="150" y="102" width="66" height="8" rx="4" fill="url(#whbar)"/>
+      <rect x="185" y="118" width="96" height="8" rx="4" fill="url(#whbar)"/>
+      <rect x="240" y="134" width="70" height="8" rx="4" fill="url(#whbar)"/>
+      <rect x="285" y="150" width="82" height="8" rx="4" fill="url(#whbar)"/>
+      <rect x="270" y="166" width="70" height="8" rx="4" fill="url(#whbar)"/>
+      <rect x="360" y="182" width="48" height="8" rx="4" fill="#E5AF52"/>
+    </g>
+  </g>
+
+  <!-- PPTX file pill -->
+  <g transform="translate(496,200)">
+    <rect x="0" y="0" width="60" height="26" rx="13" fill="#1e1e21" stroke="#FFD65C"/>
+    <text x="30" y="18" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="13" font-weight="600" fill="#E8C87A">.PPTX</text>
+  </g>
+
+  <!-- budget chip -->
+  <g transform="translate(496,240)">
+    <text x="30" y="6" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="12" font-weight="700" fill="#FFD65C">&#8364;1.04M</text>
+    <text x="30" y="22" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="10" font-weight="500" fill="#8A8A90">budget</text>
+  </g>
+</svg>
