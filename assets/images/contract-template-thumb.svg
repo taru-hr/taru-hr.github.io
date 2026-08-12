@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450" role="img" aria-label="Employment Contract Template — one-page Word document">
   <defs>
     <linearGradient id="bgc" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#161616"/>
-      <stop offset="1" stop-color="#101012"/>
+      <stop offset="0" stop-color="#0E1322"/>
+      <stop offset="1" stop-color="#080B14"/>
     </linearGradient>
     <linearGradient id="pagec" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#FAFAFA"/>
@@ -11,31 +11,31 @@
   </defs>
 
   <rect width="600" height="450" fill="url(#bgc)"/>
-  <circle cx="60" cy="410" r="150" fill="#FFD65C" opacity="0.05"/>
+  <circle cx="60" cy="410" r="150" fill="#37D6F0" opacity="0.05"/>
 
   <!-- brand kicker -->
-  <rect x="42" y="60" width="12" height="12" rx="3" fill="#FFD65C"/>
-  <text x="62" y="71" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="3" fill="#FFD65C">TARU HR · TEMPLATE</text>
+  <rect x="42" y="60" width="12" height="12" rx="3" fill="#37D6F0"/>
+  <text x="62" y="71" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="14" font-weight="600" letter-spacing="3" fill="#37D6F0">TARU HR · TEMPLATE</text>
 
   <!-- title -->
   <text x="44" y="150" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="40" font-weight="700" fill="#FCFCFC">Employment</text>
-  <text x="44" y="196" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="40" font-weight="700" fill="#FFD65C">Contract</text>
+  <text x="44" y="196" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="40" font-weight="700" fill="#37D6F0">Contract</text>
   <text x="46" y="232" font-family="'Segoe UI','Poppins',Arial,sans-serif" font-size="17" font-weight="300" fill="#B9B9BD">A one-page Finnish template</text>
 
   <!-- .DOCX pill -->
   <g transform="translate(44,268)">
-    <rect x="0" y="0" width="86" height="30" rx="15" fill="#1e1e21" stroke="#FFD65C"/>
-    <text x="43" y="20" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="14" font-weight="600" fill="#FFD65C">.DOCX</text>
+    <rect x="0" y="0" width="86" height="30" rx="15" fill="#111A2C" stroke="#37D6F0"/>
+    <text x="43" y="20" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="14" font-weight="600" fill="#37D6F0">.DOCX</text>
   </g>
 
   <!-- portrait document page -->
   <g transform="translate(372,66)">
-    <rect x="0" y="0" width="196" height="300" rx="10" fill="url(#pagec)" stroke="#2a2a2c"/>
+    <rect x="0" y="0" width="196" height="300" rx="10" fill="url(#pagec)" stroke="#243250"/>
     <!-- gold title bar -->
-    <rect x="22" y="26" width="120" height="16" rx="3" fill="#E5AF52"/>
+    <rect x="22" y="26" width="120" height="16" rx="3" fill="#4D8BFF"/>
     <rect x="22" y="50" width="80" height="7" rx="3" fill="#C9C9CE"/>
     <!-- gold divider rule -->
-    <rect x="22" y="70" width="152" height="2" rx="1" fill="#E5AF52"/>
+    <rect x="22" y="70" width="152" height="2" rx="1" fill="#4D8BFF"/>
     <!-- field lines -->
     <g fill="#D3D3D8">
       <rect x="22" y="90"  width="152" height="7" rx="3"/>
