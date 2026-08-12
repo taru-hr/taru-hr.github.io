@@ -65,7 +65,9 @@ async function renderDevelopment() {
 
     const esc = escapeHtml;
     const paths = data.paths || [];
-    const allCerts = paths.reduce(function (a, p) { return a.concat(p.certificates || []); }, []);
+    // Count every certificate on the page: the showcased path cards AND the "Other certificates" list.
+    const allCerts = paths.reduce(function (a, p) { return a.concat(p.certificates || []); }, [])
+      .concat(data.otherCertificates || []);
 
     // ---- rolled-up stats ----
     const totalModules = allCerts.reduce(function (a, c) { return a + (Number(c.modules) || 0); }, 0);

@@ -64,8 +64,8 @@
     }
   ],
   "otherCertificates": [
-    { "title": "HR Methods for Promoting Workplace Wellbeing", "issuer": "Eduhouse", "year": "2026", "lang": "Finnish", "pdf": "./assets/certificates/hr-wellbeing-certificate.pdf" },
-    { "title": "New Payroll Specialist: Mastering the Basics", "issuer": "Eduhouse", "year": "2026", "lang": "Finnish", "pdf": "./assets/certificates/payroll-basics-certificate.pdf" }
+    { "title": "HR Methods for Promoting Workplace Wellbeing", "issuer": "Eduhouse", "year": "2026", "lang": "Finnish", "modules": 22, "minutes": 462, "pdf": "./assets/certificates/hr-wellbeing-certificate.pdf" },
+    { "title": "New Payroll Specialist: Mastering the Basics", "issuer": "Eduhouse", "year": "2026", "lang": "Finnish", "modules": 41, "minutes": 664, "pdf": "./assets/certificates/payroll-basics-certificate.pdf" }
   ],
   "roadmap": [
     {
