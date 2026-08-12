@@ -1,72 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--
+  Taru Parttimaa — HR Operations, HRIS, Analytics & AI
+  Modern "future of HR" single-page portfolio.
+
+  Structure: a scrolling landing page. The Work, Insights and Certifications
+  sections are rendered from /data by assets/js/site.js, so to add a project,
+  post or certificate you still only edit the JSON files:
+      data/prototypes.json   -> Work
+      data/posts.json        -> Insights
+      data/development.json   -> Certifications + the stats band
+  The previous vCard files (style.css, components/, etc.) are left in place and
+  unused; this page does not load them.
+-->
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taru Parttimaa — HR Specialist</title>
-
-  <!-- favicon -->
+  <title>Taru Parttimaa — HR Operations, HRIS, Analytics &amp; AI</title>
+  <meta name="description" content="Taru Parttimaa — an HR specialist in Finland focused on HR operations, HRIS, HR analytics and AI. A modern portfolio of live HR tools, analytics and writing.">
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-  <!-- custom css -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/development.css">
-  <link rel="stylesheet" href="./assets/css/theme-glass.css">
-
-  <!-- google fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/site.css">
 </head>
 
 <body>
 
-  <!--
-    This page is a thin shell. Every section is a reusable component loaded from
-    /components by assets/js/include.js, and the blog/portfolio cards are rendered
-    from /data by assets/js/render.js. To add or change content, edit those files —
-    see /templates for copy-paste starting points and /docs/ARCHITECTURE.md for how
-    it all fits together.
-  -->
+  <!-- ambient field: glow + animated grid + light particles -->
+  <div class="field" aria-hidden="true">
+    <div class="glow"></div>
+    <div class="grid"></div>
+    <span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>
+    <span class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>
+  </div>
 
-  <main>
+  <div class="wrap">
 
-    <!-- #SIDEBAR -->
-    <div data-include="components/sidebar.html"></div>
+    <!-- NAV -->
+    <header class="nav">
+      <div class="container">
+        <a class="brand" href="#top">
+          <span class="mark">TP</span>
+          <span>Taru Parttimaa<small>HR OPERATIONS &amp; TECHNOLOGY</small></span>
+        </a>
+        <nav class="nav-links" data-nav>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#work">Work</a>
+          <a href="#insights">Insights</a>
+          <a href="#about">About</a>
+        </nav>
+        <a href="#contact" class="btn primary">Get in touch</a>
+      </div>
+    </header>
 
-    <!-- #MAIN-CONTENT -->
-    <div class="main-content">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">HR Operations &middot; HRIS &middot; Analytics &middot; AI</p>
+          <h1>Human-centered HR, <span class="grad">engineered</span> with data, systems and AI.</h1>
+          <p class="sub">I'm Taru Parttimaa, an HR specialist in Finland who turns fragmented HR processes into clean systems, clear analytics and AI-assisted workflows, built for the people and managers who use them every day.</p>
+          <div class="hero-cta">
+            <a href="#work" class="btn primary">View my work <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a href="#contact" class="btn ghost">Get in touch</a>
+            <span class="avail"><i></i> Open to HR opportunities</span>
+          </div>
+        </div>
 
-      <!-- #NAVBAR -->
-      <div data-include="components/navbar.html"></div>
+        <div class="panel reveal">
+          <div class="panel-hd">
+            <span class="t"><span class="d"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></span> People Operations</span>
+            <span class="live"><i></i> LIVE</span>
+          </div>
+          <div class="tiles">
+            <div class="tile"><div class="n">512<b>+8</b></div><div class="l">Headcount</div></div>
+            <div class="tile"><div class="n">1.4%</div><div class="l">Turnover</div></div>
+            <div class="tile"><div class="n">2.3%</div><div class="l">Absence</div></div>
+          </div>
+          <div class="chart">
+            <div class="bar" style="height:46%"></div><div class="bar" style="height:66%"></div>
+            <div class="bar" style="height:38%"></div><div class="bar" style="height:82%"></div>
+            <div class="bar" style="height:54%"></div><div class="bar" style="height:72%"></div>
+            <div class="bar" style="height:60%"></div>
+          </div>
+          <div class="panel-ft">
+            <span class="chip">Time</span><span class="chip">Absence</span><span class="chip">Payroll</span><span class="chip">Analytics</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <!-- #PAGES -->
-      <div data-include="components/about.html"></div>
-      <div data-include="components/resume.html"></div>
-      <div data-include="components/portfolio.html"></div>
-      <div data-include="components/blog.html"></div>
-      <div data-include="components/development.html"></div>
-
+    <!-- PRINCIPLES -->
+    <div class="principles">
+      <div class="container">
+        <span>Human-centered</span>
+        <span>Data-driven</span>
+        <span>Compliant by design</span>
+        <span>AI-augmented</span>
+        <span>Systematic</span>
+      </div>
     </div>
 
-  </main>
+    <!-- CAPABILITIES -->
+    <section class="block" id="capabilities">
+      <div class="container">
+        <div class="head reveal">
+          <p class="eyebrow">Capabilities</p>
+          <h2>The operational backbone of modern HR.</h2>
+          <p>Four connected disciplines, from the systems that run HR to the data and AI that make it smarter.</p>
+        </div>
+        <div class="cards">
+          <div class="card reveal">
+            <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4"/><path d="M5.6 5.6 8 8M16 16l2.4 2.4M18.4 5.6 16 8M8 16l-2.4 2.4"/></svg></span>
+            <h3>HR Operations</h3>
+            <p>Running the full employee lifecycle end to end, onboarding to offboarding, payroll coordination, absence and working time, with fewer errors and less manual admin.</p>
+            <div class="tags"><span class="tag">Lifecycle</span><span class="tag">Payroll</span><span class="tag">Absence</span></div>
+          </div>
+          <div class="card reveal">
+            <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M2 21h20M9 8h6M9 12h4"/></svg></span>
+            <h3>HRIS &amp; Systems</h3>
+            <p>Configuring and supporting HR systems, Sympa, Jotbar, Numeron, with a focus on clean data, reliable integrations and digital approval workflows people actually use.</p>
+            <div class="tags"><span class="tag">Sympa</span><span class="tag">Data quality</span><span class="tag">Workflows</span></div>
+          </div>
+          <div class="card reveal">
+            <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V4M4 20h16"/><path d="M7 15l3-4 3 2 4-6"/></svg></span>
+            <h3>HR Analytics</h3>
+            <p>Turning scattered HR data into dashboards and clear narratives, headcount, turnover, absence and cost, so managers and leaders can decide with evidence.</p>
+            <div class="tags"><span class="tag">Dashboards</span><span class="tag">Reporting</span><span class="tag">People data</span></div>
+          </div>
+          <div class="card reveal">
+            <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3a4 4 0 0 1 4 4c1.5.6 2.5 2 2.5 3.7a4 4 0 0 1-1 2.6M12 3a4 4 0 0 0-4 4c-1.5.6-2.5 2-2.5 3.7 0 1 .4 2 1 2.6M12 3v18M8 21h8"/></svg></span>
+            <h3>AI in HR</h3>
+            <p>Applying AI to operational HR, drafting, prompting, summarising and reporting, always with human oversight, data privacy and compliance kept firmly in the loop.</p>
+            <div class="tags"><span class="tag">Prompting</span><span class="tag">Automation</span><span class="tag">Responsible AI</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!--
-    Scripts. Load order matters:
-      script.js  — defines initApp() (interactive behaviour)
-      render.js  — defines renderCollections() (JSON -> cards)
-      include.js — loads components, then calls the two functions above
-  -->
-  <script src="./assets/js/script.js"></script>
-  <script src="./assets/js/render.js"></script>
-  <script src="./assets/js/include.js"></script>
+    <!-- WORK (rendered from data/prototypes.json) -->
+    <section class="block" id="work">
+      <div class="container">
+        <div class="head reveal">
+          <p class="eyebrow">Selected work</p>
+          <h2>Things I've designed and built.</h2>
+          <p>Live HR tools, analytics and documents, showing how modern HR operations come together.</p>
+        </div>
+        <div class="work-cards" data-work>
+          <div class="loading">Loading work&hellip;</div>
+        </div>
+      </div>
+    </section>
 
-  <!-- ionicons -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- INSIGHTS (rendered from data/posts.json) -->
+    <section class="block" id="insights">
+      <div class="container">
+        <div class="head reveal">
+          <p class="eyebrow">Insights</p>
+          <h2>Writing on the future of HR.</h2>
+          <p>Presentations and guides on AI in HR, HR operations and working in Finland.</p>
+        </div>
+        <div class="insight-cards" data-insights>
+          <div class="loading">Loading insights&hellip;</div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ABOUT + EXPERIENCE -->
+    <section class="block" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <p class="eyebrow">About</p>
+          <h2>An HR specialist who thinks in systems and data.</h2>
+          <p class="lede">I have worked in both HR Specialist and HR Assistant roles, supporting employees from onboarding to offboarding, coordinating expat HR processes, ensuring payroll accuracy and maintaining HR data integrity.</p>
+          <p class="lede">I'm passionate about improving HR through structure, data and digital tools, making processes smoother for both employees and managers.</p>
+          <div class="edu">
+            <span class="eyebrow" style="margin-bottom:12px;">Education</span>
+            <p><strong>Metropolia University of Applied Sciences</strong> &middot; 2014&ndash;2019<br><span class="dim">BBA, Economics &amp; Business Administration, Leadership &amp; Organisation Development</span></p>
+            <p><strong>Mercuria Business School</strong> &middot; 2010&ndash;2013<br><span class="dim">Vocational Qualification in Business, Customer Service &amp; Sales</span></p>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">Experience</p>
+          <ol class="timeline">
+            <li>
+              <span class="dot"></span>
+              <div class="tl-hd"><h4>HR Specialist</h4><span class="yr">2022&ndash;2025</span></div>
+              <p>Supported the full employee lifecycle for international employees, from onboarding to payroll coordination and day-to-day guidance. Developed HR processes, reporting and reward programs with managers, payroll and global stakeholders.</p>
+            </li>
+            <li>
+              <span class="dot"></span>
+              <div class="tl-hd"><h4>HR Assistant</h4><span class="yr">2018&ndash;2021</span></div>
+              <p>Provided HR support across employment, payroll, benefits and HR systems while handling a high volume of employee inquiries. Contributed to process improvement, system development and HR data quality by digitalising workflows.</p>
+            </li>
+            <li>
+              <span class="dot"></span>
+              <div class="tl-hd"><h4>HR Assistant</h4><span class="yr">2017</span></div>
+              <p>Supported day-to-day HR administration, employee documentation, internal communications and compensation activities, building a strong foundation in HR operations and employee services.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS + STATS (rendered from data/development.json) -->
+    <section class="block" id="certifications">
+      <div class="container">
+        <div class="head reveal">
+          <p class="eyebrow">Continuous learning</p>
+          <h2>Certifications &amp; focused study.</h2>
+          <p>Ongoing professional development in Finnish employment law, HR wellbeing, payroll and AI.</p>
+        </div>
+        <ul class="cert-list" data-certs>
+          <li class="loading">Loading certifications&hellip;</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <div class="metrics">
+      <div class="container">
+        <div class="metrics-grid" data-stats>
+          <div class="metric"><div class="n">5</div><div class="l">Professional certifications</div></div>
+          <div class="metric"><div class="n">110</div><div class="l">Learning modules completed</div></div>
+          <div class="metric"><div class="n">37h</div><div class="l">Focused study</div></div>
+          <div class="metric"><div class="n">3</div><div class="l">HRIS platforms worked with</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact">
+      <div class="container foot">
+        <div class="who reveal">
+          <p class="eyebrow">Contact</p>
+          <h3>Let's build better HR together.</h3>
+          <p>HR Specialist in Finland, focused on HR operations, HRIS, analytics and AI. Open to opportunities where HR meets technology and data.</p>
+        </div>
+        <div class="links reveal">
+          <a href="https://www.linkedin.com/in/taru-parttimaa-39aa83190/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.65 4.78 6.1V21H20.6v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21H12.9z"/></svg></a>
+          <a href="mailto:hervoe@gmail.com" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-note">
+        <span>Taru Parttimaa &middot; HR Operations &amp; Technology &middot; Finland</span>
+        <span>&copy; 2026 &middot; Built with care</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="./assets/js/site.js"></script>
 </body>
 
 </html>
