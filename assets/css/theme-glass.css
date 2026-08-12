@@ -1,0 +1,90 @@
+/* ==========================================================================
+   THEME: Glass-Blue  ·  futuristic frosted-glass look
+   --------------------------------------------------------------------------
+   Loaded AFTER style.css + development.css, so these rules win by cascade
+   order. To revert to the previous look, delete the theme-glass.css <link>
+   in index.html. Nothing else needs to change.
+   ========================================================================== */
+
+:root {
+  /* accent: gold -> luminous cyan */
+  --orange-yellow-crayola: hsl(198, 100%, 68%);
+  --vegas-gold:            hsl(202, 82%, 58%);
+  --text-gradient-yellow:  linear-gradient(to right, hsl(191, 100%, 77%), hsl(206, 96%, 63%));
+  --bg-gradient-yellow-1:  linear-gradient(to bottom right, hsl(198, 100%, 73%) 0%, hsla(206, 100%, 66%, 0) 50%);
+  --bg-gradient-yellow-2:  linear-gradient(135deg, hsla(198, 100%, 73%, 0.25) 0%, hsla(206, 100%, 66%, 0) 59.86%), hsla(212, 48%, 15%, 0.55);
+
+  /* text: light, faintly cool */
+  --light-gray:    hsl(205, 33%, 89%);
+  --light-gray-70: hsla(205, 33%, 89%, 0.72);
+  --white-2:       hsl(200, 46%, 97%);
+
+  /* darks -> deep glass blue (translucent so panels read as glass) */
+  --jet:           hsla(205, 62%, 68%, 0.20);
+  --onyx:          hsla(210, 44%, 24%, 0.50);
+  --eerie-black-1: hsla(211, 46%, 17%, 0.60);
+  --eerie-black-2: hsla(212, 48%, 15%, 0.52);
+  --smoky-black:   hsl(214, 62%, 7%);
+
+  --bg-gradient-onyx: linear-gradient(158deg, hsla(205, 60%, 60%, 0.10), hsla(210, 52%, 32%, 0.03));
+  --bg-gradient-jet:  linear-gradient(158deg, hsla(205, 62%, 64%, 0.12), hsla(210, 52%, 30%, 0.03)), hsla(212, 48%, 15%, 0.50);
+  --border-gradient-onyx: linear-gradient(to bottom right, hsla(200, 78%, 80%, 0.42) 0%, hsla(200, 78%, 80%, 0) 50%);
+}
+
+/* luminous deep-blue field with a cyan bloom and a faint tech grid */
+body {
+  background:
+    radial-gradient(128% 88% at 50% -16%, hsla(198, 100%, 66%, 0.26), transparent 54%),
+    radial-gradient(86% 66% at 84% 8%,    hsla(206, 92%, 56%, 0.17), transparent 55%),
+    radial-gradient(66% 58% at 8% 34%,    hsla(212, 82%, 48%, 0.13), transparent 55%),
+    linear-gradient(hsla(205, 80%, 78%, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, hsla(205, 80%, 78%, 0.03) 1px, transparent 1px),
+    linear-gradient(180deg, #0a2138 0%, #06111f 56%, #03080f 100%);
+  background-size: auto, auto, auto, 48px 48px, 48px 48px, auto;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* frosted glass on the two main panels */
+.sidebar,
+article {
+  background: linear-gradient(158deg, hsla(205, 64%, 64%, 0.11), hsla(210, 55%, 34%, 0.035));
+  border: 1px solid hsla(205, 68%, 76%, 0.22);
+  -webkit-backdrop-filter: blur(20px) saturate(1.35);
+  backdrop-filter: blur(20px) saturate(1.35);
+  box-shadow:
+    0 26px 60px -26px rgba(0, 8, 22, 0.85),
+    0 0 50px -26px hsla(198, 100%, 66%, 0.50),
+    inset 0 1px 0 hsla(200, 92%, 96%, 0.30);
+}
+
+/* glass nav bar */
+.navbar {
+  background: linear-gradient(158deg, hsla(205, 62%, 62%, 0.15), hsla(210, 55%, 32%, 0.05));
+  border: 1px solid hsla(205, 68%, 76%, 0.22);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+  backdrop-filter: blur(22px) saturate(1.4);
+  box-shadow: 0 18px 40px -20px rgba(0, 8, 22, 0.80), inset 0 1px 0 hsla(200, 92%, 96%, 0.30);
+}
+
+/* ---- Development section: retint the few hardcoded gold accents to cyan ---- */
+.dev-node:not(:last-child)::before {
+  background: linear-gradient(to bottom, var(--vegas-gold), hsla(200, 80%, 62%, 0.12));
+}
+.is-done .dev-node-dot { box-shadow: 0 0 0 4px hsla(198, 100%, 68%, 0.14); }
+@keyframes dev-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px hsla(198, 100%, 68%, 0.14); }
+  50%      { box-shadow: 0 0 0 8px hsla(198, 100%, 68%, 0.05); }
+}
+.dev-topic ion-icon { background: hsla(198, 100%, 68%, 0.10); }
+.cert-lang,
+.credential-meta li.cert-lang {
+  background: hsla(198, 100%, 68%, 0.10);
+  border-color: hsla(198, 100%, 68%, 0.35);
+}
+
+/* card lift on the frosted panels keeps a cyan glow */
+.dev-topic,
+.credential,
+.dev-stat { border-color: hsla(205, 60%, 70%, 0.18); }
+
