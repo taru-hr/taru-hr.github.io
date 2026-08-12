@@ -71,7 +71,8 @@ async function renderInsights() {
 async function renderDev() {
   var certsEl = document.querySelector('[data-certs]');
   var statsEl = document.querySelector('[data-stats]');
-  if (!certsEl && !statsEl) return;
+  var roadmapEl = document.querySelector('[data-roadmap]');
+  if (!certsEl && !statsEl && !roadmapEl) return;
   try {
     var res = await fetch('./data/development.json');
     if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
@@ -86,10 +87,11 @@ async function renderDev() {
         var provider = c.provider || c.issuer || '';
         var when = c.date || c.year || '';
         var meta = [provider, when].filter(Boolean).map(esc).join(' &middot; ');
-        var link = c.pdf ? ' href="' + esc(c.pdf) + '" target="_blank" rel="noopener"' : ' href="#certifications"';
+        var flag = c.lang ? '<span class="flag">' + esc(c.lang) + '</span>' : '';
+        var link = c.pdf ? ' href="' + esc(c.pdf) + '" target="_blank" rel="noopener"' : ' href="#"';
         return '<li><a class="certi"' + link + '>' +
             '<span class="badge">' + ICON_RIBBON + '</span>' +
-            '<span class="body"><h4>' + esc(c.title) + '</h4><span class="meta">' + meta + '</span></span>' +
+            '<span class="body"><h4>' + esc(c.title) + '</h4><span class="meta">' + meta + flag + '</span></span>' +
             '<span class="arr">' + ICON_ARROW + '</span>' +
           '</a></li>';
       }).join('');
@@ -109,8 +111,20 @@ async function renderDev() {
         return '<div class="metric"><div class="n">' + s[0] + '</div><div class="l">' + s[1] + '</div></div>';
       }).join('');
     }
+
+    if (roadmapEl) {
+      var roadmap = data.roadmap || [];
+      roadmapEl.innerHTML = roadmap.map(function (r, i) {
+        var num = ('0' + (i + 1)).slice(-2);
+        return '<div class="rmap">' +
+            '<span class="rnum">' + num + '</span>' +
+            '<div class="rbody"><h4>' + esc(r.title) + '</h4><p>' + esc(r.text) + '</p></div>' +
+          '</div>';
+      }).join('');
+    }
   } catch (err) {
     if (certsEl) certsEl.innerHTML = '';
+    if (roadmapEl) roadmapEl.innerHTML = '';
     console.error('[development] could not render from ./data/development.json', err);
   }
 }
@@ -134,7 +148,10 @@ function setupReveal() {
 function setupNav() {
   var links = Array.prototype.slice.call(document.querySelectorAll('[data-nav] a'));
   var map = links.map(function (a) {
-    return { a: a, sec: document.querySelector(a.getAttribute('href')) };
+    var href = a.getAttribute('href') || '';
+    // only in-page anchors participate in scroll-spy; cross-page links (./x.html) are skipped
+    var sec = href.charAt(0) === '#' && href.length > 1 ? document.querySelector(href) : null;
+    return { a: a, sec: sec };
   }).filter(function (x) { return x.sec; });
   if (!map.length || !('IntersectionObserver' in window)) return;
   var io = new IntersectionObserver(function (entries) {
