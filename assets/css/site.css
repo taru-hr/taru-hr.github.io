@@ -293,15 +293,17 @@ svg { display: block; }
 section.block.block-top { padding-top: 0; }
 
 /* ---------- About: bio + portrait ---------- */
-.bio-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 50px; align-items: center; }
+.bio-grid { display: grid; grid-template-columns: 1fr auto; gap: 52px; align-items: center; }
 .bio-grid h2 { font-size: clamp(1.5rem, 2.6vw, 1.95rem); font-weight: 600; letter-spacing: -0.015em; margin-bottom: 18px; color: #f2f6fc; text-wrap: balance; }
 .bio-cta { margin-top: 22px; }
+/* compact circular avatar — a subtle accent, not a hero image */
 .portrait {
-  margin: 0 0 0 auto; max-width: 360px; width: 100%;
-  border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: var(--surface);
-  box-shadow: 0 40px 80px -44px rgba(0,4,14,0.9), 0 0 60px -34px hsla(217,100%,60%,0.4), inset 0 1px 0 hsla(210,80%,90%,0.12);
+  width: 168px; height: 168px; padding: 5px; margin: 0;
+  border-radius: 50%; overflow: hidden; border: 1px solid hsla(217,100%,70%,0.28);
+  background: linear-gradient(168deg, hsla(215,45%,18%,0.55), hsla(222,50%,9%,0.6));
+  box-shadow: 0 18px 40px -22px rgba(0,4,14,0.9), 0 0 44px -16px hsla(200,95%,60%,0.4), inset 0 1px 0 hsla(210,80%,90%,0.12);
 }
-.portrait img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 22%; }
+.portrait img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: center 20%; }
 
 /* ---------- Explore link cards (landing page) ---------- */
 .explore { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
@@ -351,8 +353,9 @@ section.block.block-top { padding-top: 0; }
 @media (max-width: 940px) {
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .work-cards, .insight-cards { grid-template-columns: repeat(2, 1fr); }
-  .about-grid, .bio-grid { grid-template-columns: 1fr; gap: 40px; }
-  .portrait { margin: 0 auto; max-width: 340px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .bio-grid { grid-template-columns: 1fr; gap: 30px; }
+  .portrait { margin: 4px auto 0; }
   .resume-grid { grid-template-columns: 1fr; gap: 20px; }
   .explore { grid-template-columns: repeat(2, 1fr); }
   .metrics-grid { grid-template-columns: repeat(2, 1fr); }
