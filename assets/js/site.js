@@ -14,6 +14,7 @@ function esc(v) {
 
 var ICON_RIBBON = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="5"/><path d="M8.5 12.5 7 21l5-3 5 3-1.5-8.5"/></svg>';
 var ICON_ARROW  = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg>';
+var ICON_DOWNLOAD = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>';
 
 /* ---- WORK (data/prototypes.json) ---- */
 async function renderWork() {
@@ -88,12 +89,16 @@ async function renderDev() {
         var when = c.date || c.year || '';
         var meta = [provider, when].filter(Boolean).map(esc).join(' &middot; ');
         var flag = c.lang ? '<span class="flag">' + esc(c.lang) + '</span>' : '';
-        var link = c.pdf ? ' href="' + esc(c.pdf) + '" target="_blank" rel="noopener"' : ' href="#"';
-        return '<li><a class="certi"' + link + '>' +
+        // Only the button is clickable, and it clearly downloads a PDF, so nothing
+        // gets downloaded by an accidental click on the card.
+        var dl = c.pdf
+          ? '<a class="cert-dl" href="' + esc(c.pdf) + '" download>' + ICON_DOWNLOAD + 'Download <span class="pdf-tag">PDF</span></a>'
+          : '';
+        return '<li><div class="certi">' +
             '<span class="badge">' + ICON_RIBBON + '</span>' +
             '<span class="body"><h4>' + esc(c.title) + '</h4><span class="meta">' + meta + flag + '</span></span>' +
-            '<span class="arr">' + ICON_ARROW + '</span>' +
-          '</a></li>';
+            dl +
+          '</div></li>';
       }).join('');
     }
 
@@ -104,8 +109,7 @@ async function renderDev() {
       var stats = [
         [String(all.length), 'Professional certifications'],
         [String(modules), 'Learning modules completed'],
-        [hours + 'h', 'Focused study'],
-        ['3', 'HRIS platforms worked with']
+        [hours + 'h', 'Focused study']
       ];
       statsEl.innerHTML = stats.map(function (s) {
         return '<div class="metric"><div class="n">' + s[0] + '</div><div class="l">' + s[1] + '</div></div>';

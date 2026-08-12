@@ -245,21 +245,30 @@ section.block { padding: 84px 0; }
 /* ---------- certifications list ---------- */
 .cert-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .certi {
-  display: flex; align-items: center; gap: 15px; text-decoration: none;
+  display: flex; align-items: center; gap: 15px;
   border: 1px solid var(--line); border-radius: 13px; padding: 16px 18px;
-  background: hsla(215,42%,15%,0.34); transition: .22s ease;
+  background: hsla(215,42%,15%,0.34);
 }
-.certi:hover { border-color: hsla(217,100%,70%,0.4); box-shadow: 0 0 40px -22px hsla(217,100%,60%,0.7); transform: translateY(-2px); }
 .certi .badge { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; color: var(--blue-hi); background: hsla(217,100%,62%,0.12); border: 1px solid hsla(217,100%,70%,0.22); }
 .certi .body { min-width: 0; flex: 1; }
 .certi .body h4 { font-size: 14px; font-weight: 600; color: #eef2fa; margin: 0 0 3px; }
 .certi .body .meta { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.05em; color: var(--muted); }
-.certi .arr { color: var(--muted-2); flex: 0 0 auto; transition: .2s ease; }
-.certi:hover .arr { color: var(--blue-hi); transform: translateX(3px); }
+/* explicit, deliberate download control so nobody downloads a PDF by accident */
+.cert-dl {
+  flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; font-weight: 500;
+  color: var(--blue-hi); text-decoration: none; white-space: nowrap;
+  padding: 8px 14px; border-radius: 999px;
+  border: 1px solid hsla(217,100%,70%,0.34); background: hsla(217,100%,62%,0.08);
+  transition: .18s ease;
+}
+.cert-dl:hover, .cert-dl:focus-visible { color: #fff; background: linear-gradient(135deg, var(--blue), #3f6fe6); border-color: transparent; box-shadow: 0 8px 22px -10px hsla(217,100%,60%,0.8); outline: none; }
+.cert-dl svg { width: 15px; height: 15px; }
+.cert-dl .pdf-tag { font-weight: 700; letter-spacing: 0.06em; }
 
 /* ---------- metrics ---------- */
 .metrics { border-top: 1px solid var(--line-2); }
-.metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
 .metric { padding: 44px 22px; text-align: center; border-right: 1px solid var(--line-2); }
 .metric:last-child { border-right: 0; }
 .metric .n { font-family: var(--mono); font-size: clamp(1.9rem, 3.4vw, 2.5rem); font-weight: 600; letter-spacing: -0.02em; background: linear-gradient(120deg, #eaf1ff, var(--blue-hi)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
@@ -358,9 +367,6 @@ section.block.block-top { padding-top: 0; }
   .portrait { margin: 4px auto 0; }
   .resume-grid { grid-template-columns: 1fr; gap: 20px; }
   .explore { grid-template-columns: repeat(2, 1fr); }
-  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-  .metric:nth-child(2) { border-right: 0; }
-  .metric:nth-child(1), .metric:nth-child(2) { border-bottom: 1px solid var(--line-2); }
 }
 /* mobile nav: wrap the links to their own centered row instead of hiding them */
 @media (max-width: 760px) {
@@ -374,6 +380,9 @@ section.block.block-top { padding-top: 0; }
 }
 @media (max-width: 620px) {
   .cards, .work-cards, .insight-cards, .cert-list, .explore { grid-template-columns: 1fr; }
+  .metrics-grid { grid-template-columns: 1fr; }
+  .metric { border-right: 0; border-bottom: 1px solid var(--line-2); }
+  .metric:last-child { border-bottom: 0; }
   section.block { padding: 62px 0; }
 }
 @media (prefers-reduced-motion: reduce) {
